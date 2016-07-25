@@ -11,8 +11,7 @@ import {
   Home,
   Products,
   AddProduct,
-  EditProduct,
-  Area
+  EditProduct
 } from './components'
 
 
@@ -35,8 +34,6 @@ export const routes = (
           <Route path='edit' component={EditProduct} />
         </Route>
       </Route>
-
-      <Route path='area' component={Area} />
     </Route>
     <Route path='*' component={Home} /> {/* NotFound */}
   </div>

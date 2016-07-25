@@ -2,8 +2,7 @@
 import React, {Component} from 'react'
 
 import {
-  AddProduct,
-  AreaList, AddArea
+  AddProduct
 } from '../'
 import ProductsList from '~/containers/Products/ProductsList'
 
@@ -15,8 +14,6 @@ export default class Home extends Component {
 
       <AddProduct />
       <ProductsList />
-      <AddArea />
-      <AreaList />
     </div>
   }
 }
