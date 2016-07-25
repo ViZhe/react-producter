@@ -9,6 +9,3 @@ export ProductsList from './Products/ProductsList'
 export AddArea from './Area/AddArea'
 export Area from './Area/Area'
 export AreaList from './Area/AreaList'
-
-export GithubUserProfile from './Github/GithubUserProfile'
-export GithubReposList from './Github/GithubReposList'

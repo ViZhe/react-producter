@@ -5,8 +5,7 @@ import {Route, IndexRoute, Redirect} from 'react-router'
 import {
   App,
   Options,
-  OptionsFieldsList,
-  Github
+  OptionsFieldsList
 } from './containers'
 import {
   Home,
@@ -38,10 +37,6 @@ export const routes = (
       </Route>
 
       <Route path='area' component={Area} />
-      <Route path='github' >
-        <IndexRoute component={Github} />
-        <Route path=':username' component={Github} />
-      </Route>
     </Route>
     <Route path='*' component={Home} /> {/* NotFound */}
   </div>
