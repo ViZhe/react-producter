@@ -11,6 +11,7 @@ export default class App extends Component {
         <li><Link to='/' activeClassName='active' onlyActiveOnIndex >Main</Link></li>
         <li><Link to='/options' activeClassName='active' >Options</Link></li>
         <li><Link to='/options/fields' activeClassName='active' >Options Fields</Link></li>
+        <li><Link to='/options/groups' activeClassName='active' >Options Groups</Link></li>
         <li><Link to='/product' activeClassName='active' >Products</Link></li>
       </ul>
       {this.props.children}

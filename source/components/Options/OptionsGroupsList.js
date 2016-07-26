@@ -1,47 +1,45 @@
 
 import React, {PropTypes} from 'react'
 
-import OptionsFieldsListItem from './OptionsFieldsListItem'
+import OptionsGroupsListItem from './OptionsGroupsListItem'
 
 
-const OptionsFieldsList = ({options}) => {
+const OptionsGroupsList = ({options}) => {
   let tableStyle = {
     border: '1px solid black'
   }
 
-  const optionsFields = options.fields || []
-  const fieldsWrap = optionsFields.length
-    ? optionsFields.map((field, index) =>
-      <OptionsFieldsListItem
+  const optionsGroups = options.groups || []
+  const groupsWrap = optionsGroups.length
+    ? optionsGroups.map((group, index) =>
+      <OptionsGroupsListItem
         key={index}
-        field={field}
+        group={group}
         />
     )
     : <tr><td>Полей нет</td></tr>
 
   return <div>
-    <h2>Options Fields List</h2>
+    <h2>Options Groups List</h2>
     <table style={tableStyle} >
       <thead>
         <tr>
           <th>id</th>
           <th>name</th>
           <th>title</th>
-          <th>type</th>
-          <th>default</th>
-          <th>destroy(TODO)</th>
+          <th>total fields</th>
         </tr>
       </thead>
       <tbody>
-        {fieldsWrap}
+        {groupsWrap}
       </tbody>
     </table>
   </div>
 }
 
 
-OptionsFieldsList.propTypes = {
+OptionsGroupsList.propTypes = {
   options: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
 }
 
-export default OptionsFieldsList
+export default OptionsGroupsList
