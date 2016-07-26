@@ -10,6 +10,7 @@ export AddProduct from './Products/AddProduct'
 export EditProduct from './Products/EditProduct'
 
 export Options from './Options/Options'
+export OptionsIndex from './Options/OptionsIndex'
 export OptionsGroupsList from './Options/OptionsGroupsList'
 export OptionsGroupsListItem from './Options/OptionsGroupsListItem'
 export OptionsFieldsList from './Options/OptionsFieldsList'

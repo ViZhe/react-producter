@@ -7,13 +7,14 @@ import {
   Options,
   OptionsFieldsList,
   OptionsGroupsList
-} from './containers'
+} from '~/containers'
 import {
   Home,
+  OptionsIndex,
   Products,
   AddProduct,
   EditProduct
-} from './components'
+} from '~/components'
 
 
 export const routes = (
@@ -22,7 +23,7 @@ export const routes = (
       <IndexRoute component={Home} />
 
       <Route path='options' component={Options} >
-        <IndexRoute component={OptionsFieldsList} /> {/* TODO: optionsIndex */}
+        <IndexRoute component={OptionsIndex} />
         <Route path='fields' component={OptionsFieldsList} />
         <Route path='groups' component={OptionsGroupsList} />
       </Route>
