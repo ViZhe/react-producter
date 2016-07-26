@@ -8,7 +8,7 @@ const OptionsFieldsListItem = ({field}) => {
   }
 
   return <tr>
-    <td style={tdStyle} >{field._id.$oid}</td>
+    <td style={tdStyle} >{field.id}</td>
     <td style={tdStyle} >{field.name}</td>
     <td style={tdStyle} >{field.title}</td>
     <td style={tdStyle} >{field.type}</td>

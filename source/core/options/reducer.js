@@ -2,7 +2,10 @@
 import {fromJS} from 'immutable'
 
 import {
-  LOAD_OPTIONS
+  LOAD_OPTIONS,
+  LOAD_OPTIONS_TEMPLATES,
+  LOAD_OPTIONS_GROUPS,
+  LOAD_OPTIONS_FIELDS
 } from './constants'
 
 
@@ -42,7 +45,7 @@ export const initialState = fromJS({
     //   ]
     // }
   ],
-  isLoading: true
+  isLoading: false
 })
 
 export function optionsReducer(state = initialState, action) {
@@ -53,6 +56,21 @@ export function optionsReducer(state = initialState, action) {
         state.set('groups', action.payload.groups)
         state.set('fields', action.payload.fields)
         state.set('isLoading', false)
+      })
+
+    case LOAD_OPTIONS_TEMPLATES:
+      return state.withMutations(state => {
+        state.set('templates', action.payload)
+      })
+
+    case LOAD_OPTIONS_GROUPS:
+      return state.withMutations(state => {
+        state.set('groups', action.payload)
+      })
+
+    case LOAD_OPTIONS_FIELDS:
+      return state.withMutations(state => {
+        state.set('fields', action.payload)
       })
 
     default:

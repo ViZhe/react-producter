@@ -24,7 +24,7 @@ const OptionsFieldsList = ({options}) => {
     <table style={tableStyle} >
       <thead>
         <tr>
-          <th>_id</th>
+          <th>id</th>
           <th>name</th>
           <th>title</th>
           <th>type</th>
@@ -33,7 +33,7 @@ const OptionsFieldsList = ({options}) => {
         </tr>
       </thead>
       <tbody>
-        {options.isLoading ? 'Данные загружаются' : fieldsWrap}
+        {fieldsWrap ? fieldsWrap : 'Данные загружаются'}
       </tbody>
     </table>
   </div>

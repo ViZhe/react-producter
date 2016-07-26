@@ -7,7 +7,7 @@
 
 ## TODO
 - [ ] Update options
-  - [X] load from mlab
+  - [X] load from rethinkdb with horizon
   - [ ] templates pages
     - [ ] add
     - [ ] list
@@ -36,7 +36,7 @@
 
 ## Done
 - [X] Routing
-- [X] mLab
+- [X] RethinkDB
 - [X] Immutable
 - [X] Add express server && del webpack-dev-server
 - [X] del index.html

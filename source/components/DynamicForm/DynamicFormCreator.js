@@ -3,20 +3,24 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {
-  loadOptions
+  loadOptionsTemplates,
+  loadOptionsGroups,
+  loadOptionsFields
 } from '~/core/options/actions'
-import * as mlabHelpers from '~/utils/mlab/helpers'
+import * as hz from '~/utils/horizon/helpers'
 import DynamicForm from './DynamicForm'
 
 
 class DynamicFormCreator extends Component {
   componentDidMount() {
-    mlabHelpers.getOptions().then(response => {
-      this.props.loadOptions({
-        templates: response[0].data,
-        groups: response[1].data,
-        fields: response[2].data
-      })
+    hz.optionsTemplates.watch().subscribe(response => {
+      this.props.dispatch(loadOptionsTemplates(response))
+    })
+    hz.optionsGroups.watch().subscribe(response => {
+      this.props.dispatch(loadOptionsGroups(response))
+    })
+    hz.optionsFields.watch().subscribe(response => {
+      this.props.dispatch(loadOptionsFields(response))
     })
   }
   render() {
@@ -30,11 +34,11 @@ class DynamicFormCreator extends Component {
       tpl.name === template
     )[0]
     const currentGroups = options.groups.filter(group =>
-      currentTemplate.groups.indexOf(group._id.$oid) >= 0
+      currentTemplate.groups.indexOf(group.id) >= 0
     )
 
     currentGroups.forEach(group =>
-      options.fields.filter(field => group.fields.indexOf(field._id.$oid) >= 0)
+      options.fields.filter(field => group.fields.indexOf(field.id) >= 0)
         .forEach(field => {
           const fieldName = field.name
           const fieldDefault = field.default
@@ -102,11 +106,6 @@ const mapStateToProps = state => ({
   options: state.options.toJS()
 })
 
-const mapDispatchToProps = dispatch => ({
-  loadOptions: data => dispatch(loadOptions(data))
-})
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(DynamicFormCreator)

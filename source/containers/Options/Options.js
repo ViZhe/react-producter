@@ -3,20 +3,24 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {
-  loadOptions
+  loadOptionsTemplates,
+  loadOptionsGroups,
+  loadOptionsFields
 } from '~/core/options/actions'
-import * as mlabHelpers from '~/utils/mlab/helpers'
+import * as hz from '~/utils/horizon/helpers'
 import Options from '~/components/Options/Options'
 
 
 class OptionsContainer extends Component {
   componentDidMount() {
-    mlabHelpers.getOptions().then(response => {
-      this.props.loadOptions({
-        templates: response[0].data,
-        groups: response[1].data,
-        fields: response[2].data
-      })
+    hz.optionsTemplates.watch().subscribe(response => {
+      this.props.dispatch(loadOptionsTemplates(response))
+    })
+    hz.optionsGroups.watch().subscribe(response => {
+      this.props.dispatch(loadOptionsGroups(response))
+    })
+    hz.optionsFields.watch().subscribe(response => {
+      this.props.dispatch(loadOptionsFields(response))
     })
   }
   render() {
@@ -31,11 +35,6 @@ const mapStateToProps = state => ({
   options: state.options.toJS()
 })
 
-const mapDispatchToProps = dispatch => ({
-  loadOptions: data => dispatch(loadOptions(data))
-})
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(OptionsContainer)
