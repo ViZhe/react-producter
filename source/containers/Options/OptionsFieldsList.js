@@ -16,8 +16,7 @@ class OptionsFieldsListContainer extends Component {
 
 const mapStateToProps = state => ({
   options: {
-    fields: state.options.toJS().fields,
-    isLoading: state.options.toJS().isLoading
+    fields: state.options.toJS().fields
   }
 })
 

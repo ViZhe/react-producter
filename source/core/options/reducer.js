@@ -44,8 +44,7 @@ export const initialState = fromJS({
     //     }
     //   ]
     // }
-  ],
-  isLoading: false
+  ]
 })
 
 export function optionsReducer(state = initialState, action) {
