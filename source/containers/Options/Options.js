@@ -8,7 +8,7 @@ import {
   loadOptionsFields
 } from '~/core/options/actions'
 import * as hz from '~/utils/horizon/helpers'
-import Options from '~/components/Options/Options'
+import {Options} from '~/components'
 
 
 class OptionsContainer extends Component {

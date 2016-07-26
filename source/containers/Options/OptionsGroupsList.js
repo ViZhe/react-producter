@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import OptionsGroupsList from '~/components/Options/OptionsGroupsList'
+import {OptionsGroupsList} from '~/components'
 
 
 class OptionsGroupsListContainer extends Component {

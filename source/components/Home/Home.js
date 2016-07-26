@@ -1,10 +1,8 @@
 
 import React, {Component} from 'react'
 
-import {
-  AddProduct
-} from '../'
-import ProductsList from '~/containers/Products/ProductsList'
+import {AddProduct} from '~/components'
+import {ProductsList} from '~/containers'
 
 
 export default class Home extends Component {

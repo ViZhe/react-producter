@@ -1,7 +1,7 @@
 
 import React, {PropTypes} from 'react'
 
-import ProductsListItem from '~/containers/Products/ProductsListItem'
+import {ProductsListItem} from '~/containers'
 
 
 const ProductsList = ({products}) => {

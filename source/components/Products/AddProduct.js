@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {reset} from 'redux-form'
 
-import DynamicFormCreator from '../DynamicForm/DynamicFormCreator'
+import {DynamicFormCreator} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
 
@@ -29,12 +29,12 @@ export class AddProduct extends Component {
     )
   }
   render() {
-    const {options} = this.props
+    // const {options} = this.props
     const templ = 'defaultTemplate'
 
     return <div className='c-area-list'>
       <h2>Add Product</h2>
-      <p>Групп параметров: {options && options.templates && options.templates.filter(tpl => tpl.name === templ)[0].groups.length}</p>
+      {/* <p>Групп параметров: {options && options.templates && options.templates.filter(tpl => tpl.name === templ)[0].groups.length}</p> */}
       <DynamicFormCreator
         template={templ}
         onSubmit={::this.addProduct}

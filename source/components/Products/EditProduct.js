@@ -6,7 +6,7 @@ import {
   loadProducts
 } from '~/core/products/actions'
 import * as hz from '~/utils/horizon/helpers'
-import DynamicFormCreator from '../DynamicForm/DynamicFormCreator'
+import {DynamicFormCreator} from '~/components'
 
 
 export default class EditProduct extends Component {

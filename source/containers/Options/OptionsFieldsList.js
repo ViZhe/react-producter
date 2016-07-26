@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import OptionsFieldsList from '~/components/Options/OptionsFieldsList'
+import {OptionsFieldsList} from '~/components'
 
 
 class OptionsFieldsListContainer extends Component {

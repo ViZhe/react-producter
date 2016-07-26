@@ -6,7 +6,7 @@ import {
   loadProducts
 } from '~/core/products/actions'
 import * as hz from '~/utils/horizon/helpers'
-import ProductsList from '~/components/Products/ProductsList'
+import {ProductsList} from '~/components'
 
 
 export class ProductsListContainer extends Component {

@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 
 import AddProduct from './AddProduct'
-import ProductsList from '~/containers/Products/ProductsList'
+import {ProductsList} from '~/containers'
 
 
 export default class Products extends Component {
