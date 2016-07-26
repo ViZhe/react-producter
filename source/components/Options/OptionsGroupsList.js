@@ -17,7 +17,7 @@ const OptionsGroupsList = ({options}) => {
         group={group}
         />
     )
-    : <tr><td>Полей нет</td></tr>
+    : <tr><td>Групп нет</td></tr>
 
   return <div>
     <h2>Options Groups List</h2>

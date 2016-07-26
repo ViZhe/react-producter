@@ -6,7 +6,8 @@ import {
   App,
   Options,
   OptionsFieldsList,
-  OptionsGroupsList
+  OptionsGroupsList,
+  OptionsTemplatesList
 } from '~/containers'
 import {
   Home,
@@ -26,6 +27,7 @@ export const routes = (
         <IndexRoute component={OptionsIndex} />
         <Route path='fields' component={OptionsFieldsList} />
         <Route path='groups' component={OptionsGroupsList} />
+        <Route path='templates' component={OptionsTemplatesList} />
       </Route>
 
       <Route path='products' component={Products} />

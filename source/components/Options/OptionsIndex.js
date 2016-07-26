@@ -3,7 +3,8 @@ import React, {Component} from 'react'
 
 import {
   OptionsFieldsList,
-  OptionsGroupsList
+  OptionsGroupsList,
+  OptionsTemplatesList
 } from '~/containers'
 
 
@@ -14,6 +15,7 @@ export default class OptionsIndex extends Component {
 
       <OptionsFieldsList />
       <OptionsGroupsList />
+      <OptionsTemplatesList />
     </div>
   }
 }
