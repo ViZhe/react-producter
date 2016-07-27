@@ -6,6 +6,9 @@ import {
   OptionsGroupsList,
   OptionsTemplatesList
 } from '~/containers'
+import {
+  OptionsFieldsAdd
+} from '~/components'
 
 
 export default class OptionsIndex extends Component {
@@ -13,6 +16,7 @@ export default class OptionsIndex extends Component {
     return <div>
       <h2>Options Index</h2>
 
+      <OptionsFieldsAdd />
       <OptionsFieldsList />
       <OptionsGroupsList />
       <OptionsTemplatesList />
