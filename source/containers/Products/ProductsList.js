@@ -9,7 +9,7 @@ import * as hz from '~/utils/horizon/helpers'
 import {ProductsList} from '~/components'
 
 
-export class ProductsListContainer extends Component {
+class ProductsListContainer extends Component {
   componentDidMount() {
     hz.products.watch().subscribe(response => {
       this.props.dispatch(loadProducts(response))

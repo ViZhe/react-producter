@@ -2,14 +2,11 @@
 import React, {Component} from 'react'
 
 import {
+  OptionsFieldsAdd,
   OptionsFieldsList,
   OptionsGroupsList,
   OptionsTemplatesList
 } from '~/containers'
-import {
-  OptionsFieldsAdd
-} from '~/components'
-
 
 export default class OptionsIndex extends Component {
   render() {

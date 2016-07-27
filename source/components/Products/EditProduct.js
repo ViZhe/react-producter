@@ -9,7 +9,7 @@ import * as hz from '~/utils/horizon/helpers'
 import {DynamicFormCreator} from '~/components'
 
 
-export default class EditProduct extends Component {
+class EditProduct extends Component {
   componentDidMount() {
     hz.products.watch().subscribe(response => {
       this.props.dispatch(loadProducts(response))

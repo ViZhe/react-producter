@@ -2,6 +2,7 @@
 import React from 'react'
 // import React, {PropTypes} from 'react'
 import {reduxForm} from 'redux-form'
+import {connect} from 'react-redux'
 
 import DynamicFieldAuto from './DynamicFieldAuto'
 
@@ -39,8 +40,8 @@ const DynamicForm = ({fields, groupsList, fieldsList, handleSubmit, submitButton
 // DynamicForm.propTypes = {
 //   field: PropTypes.object.isRequired
 // }
-
-export default reduxForm({
+// export default DynamicForm
+export default connect()(reduxForm({
   form: 'dynamicForm',
   getFormState: state => state.form
-})(DynamicForm)
+})(DynamicForm))
