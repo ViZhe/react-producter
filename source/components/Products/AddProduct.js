@@ -7,7 +7,7 @@ import {DynamicFormCreator} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
 
-export class AddProduct extends Component {
+class AddProduct extends Component {
   addProduct(data) {
     const {dispatch} = this.props
 
@@ -23,8 +23,8 @@ export class AddProduct extends Component {
         dispatch(reset('dynamicForm'))
         console.info(`
         Type: Product Created
-        Id: "${_id.id}".
-      `)},
+        Id: "${_id.id}".`)
+      },
       err => console.error('Created Fail', err)
     )
   }
