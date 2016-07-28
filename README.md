@@ -10,16 +10,19 @@
   - [X] load from rethinkdb with horizon
   - [ ] templates pages
     - [ ] add
-    - [ ] list
+    - [X] list
     - [ ] edit
+    - [ ] destroy
   - [ ] groups pages
-    - [ ] add
-    - [ ] list
-    - [ ] edit
-  - [ ] fields pages
     - [ ] add
     - [X] list
     - [ ] edit
+    - [ ] destroy
+  - [ ] fields pages
+    - [X] add
+    - [X] list
+    - [ ] edit
+    - [ ] destroy
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
   - [ ] autoprefixer
