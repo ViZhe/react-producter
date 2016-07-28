@@ -1,7 +1,7 @@
 
 import React, {PropTypes} from 'react'
 
-import OptionsFieldsListItem from './OptionsFieldsListItem'
+import {OptionsFieldsListItem} from '~/containers'
 
 
 const OptionsFieldsList = ({options}) => {
@@ -9,15 +9,14 @@ const OptionsFieldsList = ({options}) => {
     border: '1px solid black'
   }
 
-  const optionsFields = options.fields || []
-  const fieldsWrap = optionsFields.length
-    ? optionsFields.map((field, index) =>
-      <OptionsFieldsListItem
-        key={index}
-        field={field}
-        />
-    )
-    : <tr><td>Полей нет</td></tr>
+  const optionsFields = options.fields.map((field, index) =>
+    <OptionsFieldsListItem
+      key={index}
+      field={field}
+      />
+  )
+  const optionsFieldsEmpty = <tr><td colSpan={7}>Полей нет</td></tr>
+
 
   return <div>
     <h2>Options Fields List</h2>
@@ -29,11 +28,11 @@ const OptionsFieldsList = ({options}) => {
           <th>title</th>
           <th>type</th>
           <th>default</th>
-          <th>destroy(TODO)</th>
+          <th>destroy</th>
         </tr>
       </thead>
       <tbody>
-        {fieldsWrap}
+        {optionsFields || optionsFieldsEmpty}
       </tbody>
     </table>
   </div>

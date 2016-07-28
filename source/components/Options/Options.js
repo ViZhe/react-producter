@@ -1,11 +1,13 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class Options extends Component {
-  render() {
-    return <div>
-      <h2>Options</h2>
-      {this.props.children}
-    </div>
-  }
+
+const Options = ({children}) => {
+  return <div>
+    <h2>Options</h2>
+    {children}
+  </div>
 }
+
+
+export default Options

@@ -20,11 +20,6 @@ const mapStateToProps = state => ({
   }
 })
 
-// const mapDispatchToProps = dispatch => ({
-//   destroyField: data => dispatch(destroyField(data))
-// })
-
 export default connect(
   mapStateToProps
-  // ,mapDispatchToProps
 )(OptionsGroupsListContainer)

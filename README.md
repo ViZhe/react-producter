@@ -22,7 +22,7 @@
     - [X] add
     - [X] list
     - [ ] edit
-    - [ ] destroy
+    - [X] destroy
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
   - [ ] autoprefixer

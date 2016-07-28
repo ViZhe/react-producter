@@ -2,11 +2,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import {
-  loadProducts
-} from '~/core/products/actions'
-import * as hz from '~/utils/horizon/helpers'
 import {ProductsList} from '~/components'
+import {loadProducts} from '~/core/products/actions'
+import * as hz from '~/utils/horizon/helpers'
 
 
 class ProductsListContainer extends Component {

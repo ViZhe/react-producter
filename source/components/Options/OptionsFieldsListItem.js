@@ -2,7 +2,7 @@
 import React, {PropTypes} from 'react'
 
 
-const OptionsFieldsListItem = ({field}) => {
+const OptionsFieldsListItem = ({field, destroyHandler}) => {
   let tdStyle = {
     border: '1px solid gray'
   }
@@ -13,7 +13,7 @@ const OptionsFieldsListItem = ({field}) => {
     <td style={tdStyle} >{field.title}</td>
     <td style={tdStyle} >{field.type}</td>
     <td style={tdStyle} >{field.default}</td>
-    <td style={tdStyle} >destroy(TODO)</td>
+    <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
   </tr>
 }
 

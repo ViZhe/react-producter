@@ -2,13 +2,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
+import {Options} from '~/components'
 import {
   loadOptionsTemplates,
   loadOptionsGroups,
   loadOptionsFields
 } from '~/core/options/actions'
 import * as hz from '~/utils/horizon/helpers'
-import {Options} from '~/components'
 
 
 class OptionsContainer extends Component {
