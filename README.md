@@ -4,6 +4,12 @@
 [![Dependency Status](https://david-dm.org/ViZhe/react-producter.svg)](https://david-dm.org/ViZhe/react-producter#info=dependencies)
 [![Dev Dependency Status](https://david-dm.org/ViZhe/react-producter/dev-status.svg)](https://david-dm.org/ViZhe/react-producter#info=devDependencies)
 
+## Start
+```
+npm install
+rethinkdb
+npm start
+```
 
 ## TODO
 - [ ] Update options
