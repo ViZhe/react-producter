@@ -9,15 +9,13 @@ const OptionsTemplatesList = ({options}) => {
     border: '1px solid black'
   }
 
-  const optionsTemplates = options.templates || []
-  const templatesWrap = optionsTemplates.length
-    ? optionsTemplates.map((tmp, index) =>
-      <OptionsTemplatesListItem
-        key={index}
-        tmp={tmp}
-        />
-    )
-    : <tr><td>Шаблонов нет</td></tr>
+  const optionsTemplates = options.templates.map((template, index) =>
+    <OptionsTemplatesListItem
+      key={index}
+      template={template}
+      />
+  )
+  const optionsTemplatesEmpty = <tr><td colSpan={7}>Шаблонов нет</td></tr>
 
   return <div>
     <h2>Options Templates List</h2>
@@ -30,7 +28,7 @@ const OptionsTemplatesList = ({options}) => {
         </tr>
       </thead>
       <tbody>
-        {templatesWrap}
+        {optionsTemplates || optionsTemplatesEmpty}
       </tbody>
     </table>
   </div>

@@ -2,21 +2,21 @@
 import React, {PropTypes} from 'react'
 
 
-const OptionsTemplatesListItem = ({tmp}) => {
+const OptionsTemplatesListItem = ({template}) => {
   let tdStyle = {
     border: '1px solid gray'
   }
 
   return <tr>
-    <td style={tdStyle} >{tmp.id}</td>
-    <td style={tdStyle} >{tmp.name}</td>
-    <td style={tdStyle} >{tmp.groups.length}</td>
+    <td style={tdStyle} >{template.id}</td>
+    <td style={tdStyle} >{template.name}</td>
+    <td style={tdStyle} >{template.groups.length}</td>
   </tr>
 }
 
 
 OptionsTemplatesListItem.propTypes = {
-  tmp: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
+  template: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
 }
 
 export default OptionsTemplatesListItem

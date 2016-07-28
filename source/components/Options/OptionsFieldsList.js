@@ -17,7 +17,6 @@ const OptionsFieldsList = ({options}) => {
   )
   const optionsFieldsEmpty = <tr><td colSpan={7}>Полей нет</td></tr>
 
-
   return <div>
     <h2>Options Fields List</h2>
     <table style={tableStyle} >

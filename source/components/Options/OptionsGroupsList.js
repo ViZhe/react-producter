@@ -9,15 +9,13 @@ const OptionsGroupsList = ({options}) => {
     border: '1px solid black'
   }
 
-  const optionsGroups = options.groups || []
-  const groupsWrap = optionsGroups.length
-    ? optionsGroups.map((group, index) =>
-      <OptionsGroupsListItem
-        key={index}
-        group={group}
-        />
-    )
-    : <tr><td>Групп нет</td></tr>
+  const optionsGroups = options.groups.map((group, index) =>
+    <OptionsGroupsListItem
+      key={index}
+      group={group}
+      />
+  )
+  const optionsGroupsEmpty = <tr><td colSpan={7}>Полей нет</td></tr>
 
   return <div>
     <h2>Options Groups List</h2>
@@ -31,7 +29,7 @@ const OptionsGroupsList = ({options}) => {
         </tr>
       </thead>
       <tbody>
-        {groupsWrap}
+        {optionsGroups || optionsGroupsEmpty}
       </tbody>
     </table>
   </div>
