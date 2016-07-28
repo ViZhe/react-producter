@@ -2,19 +2,19 @@
 import React from 'react'
 
 import {
-  OptionsFieldsAdd,
-  OptionsFieldsList,
   OptionsGroupsList,
   OptionsTemplatesList
 } from '~/containers'
+import {
+  OptionsFields
+} from '~/components'
 
 
 const OptionsIndex = ({children}) => {
   return <div>
     <h2>Options Index</h2>
 
-    <OptionsFieldsAdd />
-    <OptionsFieldsList />
+    <OptionsFields />
     <OptionsGroupsList />
     <OptionsTemplatesList />
   </div>

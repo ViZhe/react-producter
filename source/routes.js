@@ -5,13 +5,15 @@ import {Route, IndexRoute, Redirect} from 'react-router'
 import {
   App,
   Options,
-  OptionsFieldsList,
+  OptionsFieldsAdd,
+  OptionsFieldsEdit,
   OptionsGroupsList,
   OptionsTemplatesList
 } from '~/containers'
 import {
   Home,
   OptionsIndex,
+  OptionsFields,
   Products,
   AddProduct,
   EditProduct
@@ -25,7 +27,16 @@ export const routes = (
 
       <Route path='options' component={Options} >
         <IndexRoute component={OptionsIndex} />
-        <Route path='fields' component={OptionsFieldsList} />
+
+        <Route path='fields' component={OptionsFields} />
+        <Redirect from='field' to='fields' />
+        <Route path='field' >
+          <Route path='add' component={OptionsFieldsAdd} />
+          <Route path=':id' >
+            <IndexRoute component={OptionsFieldsEdit} />
+          </Route>
+        </Route>
+
         <Route path='groups' component={OptionsGroupsList} />
         <Route path='templates' component={OptionsTemplatesList} />
       </Route>

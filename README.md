@@ -21,7 +21,7 @@
   - [ ] fields pages
     - [X] add
     - [X] list
-    - [ ] edit
+    - [X] edit
     - [X] destroy
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
