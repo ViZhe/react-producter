@@ -12,7 +12,7 @@ class OptionsFieldsAddContainer extends Component {
     hz.optionsFields.store(fieldData).subscribe(
       result => console.info(`Create - Field - Success\nId: "${result.id}".`),
       err => console.error(`Create - Field - Fail: ${err}`),
-      () => this.props.dispatch(reset('OptionsFieldsAdd'))
+      () => this.props.resetForm()
     )
   }
   render() {
@@ -24,6 +24,13 @@ class OptionsFieldsAddContainer extends Component {
 }
 
 
-export default connect()(reduxForm({
+const mapDispatchToProps = dispatch => ({
+  resetForm: () => dispatch(reset('OptionsFieldsAdd'))
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(reduxForm({
   form: 'OptionsFieldsAdd'
 })(OptionsFieldsAddContainer))
