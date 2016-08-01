@@ -20,10 +20,10 @@ npm start
     - [ ] edit
     - [ ] destroy
   - [ ] groups pages
-    - [ ] add
+    - [X] add
     - [X] list
     - [ ] edit
-    - [ ] destroy
+    - [X] destroy
   - [ ] fields pages
     - [X] add
     - [X] list

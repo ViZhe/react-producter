@@ -2,7 +2,7 @@
 import React, {PropTypes} from 'react'
 
 
-const OptionsGroupsListItem = ({group}) => {
+const OptionsGroupsListItem = ({group, destroyHandler}) => {
   let tdStyle = {
     border: '1px solid gray'
   }
@@ -12,6 +12,7 @@ const OptionsGroupsListItem = ({group}) => {
     <td style={tdStyle} >{group.name}</td>
     <td style={tdStyle} >{group.title}</td>
     <td style={tdStyle} >{group.fields && group.fields.length}</td>
+    <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
   </tr>
 }
 
