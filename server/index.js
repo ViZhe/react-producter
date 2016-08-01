@@ -29,7 +29,6 @@ server.use(webpackDevMiddleware(compiler, {
 }))
 server.use(webpackHotMiddleware(compiler))
 
-
 server.get('*', (req, res) => {
   res.status(200).send(`
     <!DOCTYPE html>

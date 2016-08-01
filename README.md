@@ -35,6 +35,7 @@ npm start
   - [ ] cssnano
   - [ ] linter
 - [ ] SSR
+- [ ] from horizon to rethinkdb + express api + socketio
 - [ ] add React Helmet
 - [ ] add propTypes in components
 - [ ] cover tests
