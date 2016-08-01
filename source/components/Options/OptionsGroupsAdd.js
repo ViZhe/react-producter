@@ -17,7 +17,7 @@ const OptionsGroupsAdd = ({options, onSubmit, handleSubmit}) => {
       <div>
         <label>Заголовок группы</label>
         <div>
-          <Field name='title' component='input' type='text' placeholder='Заголовок поля' />
+          <Field name='title' component='input' type='text' placeholder='Заголовок группы' />
         </div>
       </div>
       <div>
