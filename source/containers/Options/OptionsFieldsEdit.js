@@ -27,7 +27,7 @@ class OptionsFieldsEditContainer extends Component {
     )[0]
 
     return <OptionsFieldsEdit
-      field={field}
+      field={field || {}}
       onSubmit={::this.updateField}
       {...this.props}
       />

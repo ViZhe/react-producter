@@ -26,6 +26,7 @@ const OptionsGroupsList = ({options}) => {
           <th>name</th>
           <th>title</th>
           <th>total fields</th>
+          <th>edit</th>
           <th>destroy</th>
         </tr>
       </thead>

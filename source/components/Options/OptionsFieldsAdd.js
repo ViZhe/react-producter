@@ -11,25 +11,25 @@ const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => {
       <div>
         <label>Название</label>
         <div>
-          <Field name='name' component='input' type='text' placeholder='Название' />
+          <Field component='input' type='text' name='name' placeholder='Название' />
         </div>
       </div>
       <div>
         <label>Тип поля</label>
         <div>
-          <Field name='type' component='input' type='text' placeholder='Тип поля' />
+          <Field component='input' type='text' name='type' placeholder='Тип поля' />
         </div>
       </div>
       <div>
         <label>Заголовок поля</label>
         <div>
-          <Field name='title' component='input' type='text' placeholder='Заголовок поля' />
+          <Field component='input' type='text' name='title' placeholder='Заголовок поля' />
         </div>
       </div>
       <div>
         <label>Значение по умолчанию</label>
         <div>
-          <Field name='default' component='input' type='text' placeholder='Значение по умолчанию' />
+          <Field component='input' type='text' name='default' placeholder='Значение по умолчанию' />
         </div>
       </div>
       <div>

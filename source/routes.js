@@ -8,8 +8,7 @@ import {
   OptionsFieldsAdd,
   OptionsFieldsEdit,
   OptionsGroupsAdd,
-  // OptionsGroupsEdit,
-  OptionsGroupsList,
+  OptionsGroupsEdit,
   OptionsTemplatesList
 } from '~/containers'
 import {
@@ -44,12 +43,11 @@ export const routes = (
         <Redirect from='group' to='groups' />
         <Route path='group' >
           <Route path='add' component={OptionsGroupsAdd} />
-          {/* <Route path=':id' >
+          <Route path=':id' >
             <IndexRoute component={OptionsGroupsEdit} />
-          </Route> */}
+          </Route>
         </Route>
 
-        <Route path='groups' component={OptionsGroupsList} />
         <Route path='templates' component={OptionsTemplatesList} />
       </Route>
 

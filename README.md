@@ -22,7 +22,7 @@ npm start
   - [ ] groups pages
     - [X] add
     - [X] list
-    - [ ] edit
+    - [X] edit
     - [X] destroy
   - [ ] fields pages
     - [X] add
