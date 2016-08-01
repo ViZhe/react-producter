@@ -19,16 +19,22 @@ npm start
     - [X] list
     - [ ] edit
     - [ ] destroy
-  - [ ] groups pages
+  - [X] groups pages
     - [X] add
     - [X] list
     - [X] edit
     - [X] destroy
-  - [ ] fields pages
+  - [X] fields pages
     - [X] add
     - [X] list
     - [X] edit
     - [X] destroy
+- [ ] Products
+  - [ ] add
+    - [ ] update DynamicForm to redux-form v6
+  - [X] list
+  - [ ] edit
+  - [X] destroy
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
   - [ ] autoprefixer
