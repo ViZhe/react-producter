@@ -2,17 +2,17 @@
 import React from 'react'
 
 import {
-  OptionsFieldsAdd,
-  OptionsFieldsList
+  OptionsGroupsAdd,
+  OptionsGroupsList
 } from '~/containers'
 
 
 const OptionsFields = () => {
   return <div>
-    <h2>Options Fields</h2>
+    <h2>Options Groups</h2>
 
-    <OptionsFieldsAdd />
-    <OptionsFieldsList />
+    <OptionsGroupsAdd />
+    <OptionsGroupsList />
   </div>
 }
 

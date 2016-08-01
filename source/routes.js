@@ -7,6 +7,8 @@ import {
   Options,
   OptionsFieldsAdd,
   OptionsFieldsEdit,
+  OptionsGroupsAdd,
+  // OptionsGroupsEdit,
   OptionsGroupsList,
   OptionsTemplatesList
 } from '~/containers'
@@ -14,6 +16,7 @@ import {
   Home,
   OptionsIndex,
   OptionsFields,
+  OptionsGroups,
   Products,
   AddProduct,
   EditProduct
@@ -35,6 +38,15 @@ export const routes = (
           <Route path=':id' >
             <IndexRoute component={OptionsFieldsEdit} />
           </Route>
+        </Route>
+
+        <Route path='groups' component={OptionsGroups} />
+        <Redirect from='group' to='groups' />
+        <Route path='group' >
+          <Route path='add' component={OptionsGroupsAdd} />
+          {/* <Route path=':id' >
+            <IndexRoute component={OptionsGroupsEdit} />
+          </Route> */}
         </Route>
 
         <Route path='groups' component={OptionsGroupsList} />

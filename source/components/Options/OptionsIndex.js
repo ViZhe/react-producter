@@ -2,11 +2,11 @@
 import React from 'react'
 
 import {
-  OptionsGroupsList,
   OptionsTemplatesList
 } from '~/containers'
 import {
-  OptionsFields
+  OptionsFields,
+  OptionsGroups
 } from '~/components'
 
 
@@ -15,7 +15,7 @@ const OptionsIndex = ({children}) => {
     <h2>Options Index</h2>
 
     <OptionsFields />
-    <OptionsGroupsList />
+    <OptionsGroups />
     <OptionsTemplatesList />
   </div>
 }

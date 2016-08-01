@@ -11,7 +11,7 @@ const OptionsGroupsListItem = ({group}) => {
     <td style={tdStyle} >{group.id}</td>
     <td style={tdStyle} >{group.name}</td>
     <td style={tdStyle} >{group.title}</td>
-    <td style={tdStyle} >{group.fields.length}</td>
+    <td style={tdStyle} >{group.fields && group.fields.length}</td>
   </tr>
 }
 
