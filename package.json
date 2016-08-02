@@ -44,7 +44,6 @@
   "dependencies": {
     "@horizon/client": "^1.1.3",
     "@horizon/server": "^1.1.3",
-    "axios": "^0.13.1",
     "babel-polyfill": "^6.9.1",
     "babel-runtime": "^6.11.6",
     "express": "^4.14.0",
