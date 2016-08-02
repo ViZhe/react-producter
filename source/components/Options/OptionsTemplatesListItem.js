@@ -10,7 +10,8 @@ const OptionsTemplatesListItem = ({template}) => {
   return <tr>
     <td style={tdStyle} >{template.id}</td>
     <td style={tdStyle} >{template.name}</td>
-    <td style={tdStyle} >{template.groups.length}</td>
+    <td style={tdStyle} >{template.title}</td>
+    <td style={tdStyle} >{template.groups ? template.groups.length : 0}</td>
   </tr>
 }
 

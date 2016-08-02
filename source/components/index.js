@@ -28,5 +28,7 @@ export OptionsGroupsEdit from './Options/OptionsGroupsEdit'
 export OptionsGroupsList from './Options/OptionsGroupsList'
 export OptionsGroupsListItem from './Options/OptionsGroupsListItem'
 
+export OptionsTemplates from './Options/OptionsTemplates'
+export OptionsTemplatesAdd from './Options/OptionsTemplatesAdd'
 export OptionsTemplatesList from './Options/OptionsTemplatesList'
 export OptionsTemplatesListItem from './Options/OptionsTemplatesListItem'

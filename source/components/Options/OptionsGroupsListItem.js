@@ -14,7 +14,7 @@ const OptionsGroupsListItem = ({group, destroyHandler}) => {
     <td style={tdStyle} >{id}</td>
     <td style={tdStyle} >{group.name}</td>
     <td style={tdStyle} >{group.title}</td>
-    <td style={tdStyle} >{group.fields && group.fields.length}</td>
+    <td style={tdStyle} >{group.fields ? group.fields.length : 0}</td>
     <td style={tdStyle} ><Link to={`/options/group/${id}`} >edit</Link></td>
     <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
   </tr>
