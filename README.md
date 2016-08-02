@@ -15,10 +15,10 @@ npm start
 - [ ] Update options
   - [X] load from rethinkdb with horizon
   - [ ] templates pages
-    - [ ] add
+    - [X] add
     - [X] list
     - [ ] edit
-    - [ ] destroy
+    - [X] destroy
   - [X] groups pages
     - [X] add
     - [X] list
