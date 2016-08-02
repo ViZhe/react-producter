@@ -16,6 +16,7 @@ const OptionsFieldsListItem = ({field, destroyHandler}) => {
     <td style={tdStyle} >{field.title}</td>
     <td style={tdStyle} >{field.type}</td>
     <td style={tdStyle} >{field.defaultValue}</td>
+    <td style={tdStyle} >{field.placeholder}</td>
     <td style={tdStyle} ><Link to={`/options/field/${id}`} >edit</Link></td>
     <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
   </tr>

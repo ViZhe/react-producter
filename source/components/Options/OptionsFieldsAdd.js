@@ -33,6 +33,12 @@ const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => {
         </div>
       </div>
       <div>
+        <label>Заполнитель</label>
+        <div>
+          <Field component='input' type='text' name='placeholder' placeholder='Заполнитель' />
+        </div>
+      </div>
+      <div>
         <button type='submit' >Создать поле</button>
       </div>
     </form>
