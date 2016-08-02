@@ -22,8 +22,7 @@ module.exports = {
       'react-router',
       'redux',
       'redux-form',
-      'immutable',
-      'axios'
+      'immutable'
     ]
   },
   output: {
