@@ -29,7 +29,7 @@ const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => {
       <div>
         <label>Значение по умолчанию</label>
         <div>
-          <Field component='input' type='text' name='default' placeholder='Значение по умолчанию' />
+          <Field component='input' type='text' name='defaultValue' placeholder='Значение по умолчанию' />
         </div>
       </div>
       <div>

@@ -26,7 +26,7 @@ const OptionsFieldsList = ({options}) => {
           <th>name</th>
           <th>title</th>
           <th>type</th>
-          <th>default</th>
+          <th>defaultValue</th>
           <th>edit</th>
           <th>destroy</th>
         </tr>
