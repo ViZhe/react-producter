@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react'
 const DynamicFieldTextarea = ({field, option}) => {
   return <label title={field.name} >
     {field.title}
-    <textarea {...option} ></textarea>
+    <textarea {...option} />
     {option.touched && option.error && <div>{option.error}</div>}
     <br />
   </label>

@@ -8,16 +8,16 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsFieldsAddContainer extends Component {
-  addField = fieldData => {
+  handleAddField = fieldData => {
     hz.optionsFields.store(fieldData).subscribe(
-      result => console.info(`Create - Field - Success\nId: "${result.id}".`),
+      res => console.info(`Create - Field - Success\nID: "${res.id}".`),
       err => console.error(`Create - Field - Fail: ${err}`),
       () => this.props.resetForm()
     )
   }
   render() {
     return <OptionsFieldsAdd
-      onSubmit={::this.addField}
+      onSubmit={this.handleAddField}
       {...this.props}
       />
   }

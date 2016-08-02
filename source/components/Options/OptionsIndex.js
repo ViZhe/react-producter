@@ -10,7 +10,7 @@ import {
 } from '~/components'
 
 
-const OptionsIndex = ({children}) => {
+const OptionsIndex = () => {
   return <div>
     <h2>Options Index</h2>
 

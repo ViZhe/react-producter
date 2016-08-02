@@ -35,6 +35,7 @@ npm start
   - [X] list
   - [ ] edit
   - [X] destroy
+- [ ] Remove hz.store && hz.remove && hz.update in reduser
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
   - [ ] autoprefixer
@@ -44,7 +45,7 @@ npm start
 - [ ] from horizon to rethinkdb + express api + socketio
 - [ ] add React Helmet
 - [ ] add propTypes in components
-- [ ] cover tests
+- [ ] tests
 - [ ] logs
 - [ ] express.js + mongoose
 - [ ] Add [Normalizr](https://github.com/paularmstrong/normalizr)

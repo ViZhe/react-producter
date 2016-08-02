@@ -8,9 +8,7 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class AddProduct extends Component {
-  addProduct(data) {
-    const {dispatch} = this.props
-
+  handleAddProduct = data => {
     const product = {
       isDeleted: false,
       isActivated: false,
@@ -19,31 +17,31 @@ class AddProduct extends Component {
     }
 
     hz.products.store(product).subscribe(
-      _id => {
-        dispatch(reset('dynamicForm'))
-        console.info(`
-        Type: Product Created
-        Id: "${_id.id}".`)
-      },
-      err => console.error('Created Fail', err)
+      res => console.info(`Create - Product - Success\nID: "${res.id}"`),
+      err => console.error(`Create - Product - Fail: ${err}`),
+      () => this.props.resetForm()
     )
   }
   render() {
-    // const {options} = this.props
     const templ = 'defaultTemplate'
 
     return <div className='c-area-list'>
       <h2>Add Product</h2>
-      {/* <p>Групп параметров: {options && options.templates && options.templates.filter(tpl => tpl.name === templ)[0].groups.length}</p> */}
       <DynamicFormCreator
         template={templ}
-        onSubmit={::this.addProduct}
+        onSubmit={this.handleAddProduct}
         submitButtonText='Создать товар'
         />
     </div>
   }
 }
 
-export default connect(state => ({
-  options: state.options.toJS()
-}))(AddProduct)
+
+const mapDispatchToProps = dispatch => ({
+  resetForm: () => dispatch(reset('dynamicForm'))
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(AddProduct)

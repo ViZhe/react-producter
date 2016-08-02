@@ -8,13 +8,13 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsFieldsEditContainer extends Component {
-  updateField = fieldData => {
+  handleUpdateField = fieldData => {
     if (Object.keys(fieldData).length > 0) {
       hz.optionsFields.update({
         ...fieldData,
         id: this.props.params.id
       }).subscribe(
-        result => console.info(`Update - Field - Success\nId: "${result.id}".`),
+        res => console.info(`Update - Field - Success\nId: "${res.id}".`),
         err => console.error(`Update - Field - Fail: ${err}`)
       )
     } else {
@@ -28,7 +28,7 @@ class OptionsFieldsEditContainer extends Component {
 
     return <OptionsFieldsEdit
       field={field || {}}
-      onSubmit={::this.updateField}
+      onSubmit={this.handleUpdateField}
       {...this.props}
       />
   }

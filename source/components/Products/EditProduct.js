@@ -15,16 +15,13 @@ class EditProduct extends Component {
       this.props.dispatch(loadProducts(response))
     })
   }
-  updateProduct(data) {
+  handleUpdateProduct = data => {
     hz.products.update({
       id: this.props.params.id,
       updatedAt: Math.floor(Date.now() / 1000), // get timestamp
       options: data
     }).subscribe(
-      _id => console.info(`
-        Type: Product Update
-        Id: "${_id.id}".
-      `),
+      res => console.info(`Type: Product Update\nID: "${res.id}"`),
       err => console.error('Update Fail', err)
     )
   }
@@ -37,7 +34,7 @@ class EditProduct extends Component {
 
     const former = <DynamicFormCreator
       template={product.template || 'defaultTemplate'}
-      onSubmit={::this.updateProduct}
+      onSubmit={this.handleUpdateProduct}
       submitButtonText='Обновить товар'
       />
 
@@ -48,6 +45,11 @@ class EditProduct extends Component {
   }
 }
 
-export default connect(state => ({
+
+const mapStateToProps = state => ({
   products: state.products.toJS()
-}))(EditProduct)
+})
+
+export default connect(
+  mapStateToProps
+)(EditProduct)

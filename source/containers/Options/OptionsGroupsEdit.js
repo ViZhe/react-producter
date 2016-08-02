@@ -8,13 +8,13 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsGroupsEditContainer extends Component {
-  updateGroup = groupData => {
+  handleUpdateGroup = groupData => {
     if (Object.keys(groupData).length > 0) {
       hz.optionsGroups.update({
         ...groupData,
         id: this.props.params.id
       }).subscribe(
-        result => console.info(`Update - Group - Success\nId: "${result.id}".`),
+        res => console.info(`Update - Group - Success\nId: "${res.id}".`),
         err => console.error(`Update - Group - Fail: ${err}`)
       )
     } else {
@@ -28,7 +28,7 @@ class OptionsGroupsEditContainer extends Component {
 
     return <OptionsGroupsEdit
       group={group || {}}
-      onSubmit={::this.updateGroup}
+      onSubmit={this.handleUpdateGroup}
       {...this.props}
       />
   }

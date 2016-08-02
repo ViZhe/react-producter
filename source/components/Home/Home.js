@@ -5,7 +5,7 @@ import {AddProduct} from '~/components'
 import {ProductsList} from '~/containers'
 
 
-const Home = ({children}) => {
+const Home = () => {
   return <div>
     <h2>Home</h2>
 

@@ -7,8 +7,8 @@ import {
   loadOptionsGroups,
   loadOptionsFields
 } from '~/core/options/actions'
-import * as hz from '~/utils/horizon/helpers'
 import DynamicForm from './DynamicForm'
+import * as hz from '~/utils/horizon/helpers'
 
 
 class DynamicFormCreator extends Component {
