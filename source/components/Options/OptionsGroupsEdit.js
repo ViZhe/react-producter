@@ -3,7 +3,7 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsGroupsEdit = ({group = {}, options, onSubmit, handleSubmit}) => {
+const OptionsGroupsEdit = ({group, options, onSubmit, handleSubmit}) => {
   return <div>
     <h2>Options Groups Edit</h2>
 

@@ -12,23 +12,6 @@ npm start
 ```
 
 ## TODO
-- [ ] Update options
-  - [X] load from rethinkdb with horizon
-  - [ ] templates pages
-    - [X] add
-    - [X] list
-    - [ ] edit
-    - [X] destroy
-  - [X] groups pages
-    - [X] add
-    - [X] list
-    - [X] edit
-    - [X] destroy
-  - [X] fields pages
-    - [X] add
-    - [X] list
-    - [X] edit
-    - [X] destroy
 - [ ] Products
   - [ ] add
     - [ ] update DynamicForm to redux-form v6
@@ -52,6 +35,23 @@ npm start
 - [ ] ???
 
 ## Done
+- [X] Update options
+  - [X] load from rethinkdb with horizon
+  - [X] templates pages
+    - [X] add
+    - [X] list
+    - [X] edit
+    - [X] destroy
+  - [X] groups pages
+    - [X] add
+    - [X] list
+    - [X] edit
+    - [X] destroy
+  - [X] fields pages
+    - [X] add
+    - [X] list
+    - [X] edit
+    - [X] destroy
 - [X] Routing
 - [X] RethinkDB
 - [X] Immutable

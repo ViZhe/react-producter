@@ -3,7 +3,7 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsTemplatesEdit = ({template = {}, options, onSubmit, handleSubmit}) => {
+const OptionsTemplatesEdit = ({template, options, onSubmit, handleSubmit}) => {
   return <div>
     <h2>Options Templates Edit</h2>
 
