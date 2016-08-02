@@ -2,7 +2,7 @@
 import React, {PropTypes} from 'react'
 
 
-const OptionsTemplatesListItem = ({template}) => {
+const OptionsTemplatesListItem = ({template, destroyHandler}) => {
   let tdStyle = {
     border: '1px solid gray'
   }
@@ -12,6 +12,7 @@ const OptionsTemplatesListItem = ({template}) => {
     <td style={tdStyle} >{template.name}</td>
     <td style={tdStyle} >{template.title}</td>
     <td style={tdStyle} >{template.groups ? template.groups.length : 0}</td>
+    <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
   </tr>
 }
 

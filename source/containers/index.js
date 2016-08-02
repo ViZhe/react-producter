@@ -20,3 +20,4 @@ export OptionsGroupsListItem from './Options/OptionsGroupsListItem'
 
 export OptionsTemplatesAdd from './Options/OptionsTemplatesAdd'
 export OptionsTemplatesList from './Options/OptionsTemplatesList'
+export OptionsTemplatesListItem from './Options/OptionsTemplatesListItem'

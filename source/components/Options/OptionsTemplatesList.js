@@ -1,7 +1,7 @@
 
 import React, {PropTypes} from 'react'
 
-import OptionsTemplatesListItem from './OptionsTemplatesListItem'
+import {OptionsTemplatesListItem} from '~/containers'
 
 
 const OptionsTemplatesList = ({options}) => {
@@ -26,6 +26,7 @@ const OptionsTemplatesList = ({options}) => {
           <th>name</th>
           <th>title</th>
           <th>total groups</th>
+          <th>destroy</th>
         </tr>
       </thead>
       <tbody>
