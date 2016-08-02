@@ -9,7 +9,8 @@ import {
   OptionsFieldsEdit,
   OptionsGroupsAdd,
   OptionsGroupsEdit,
-  OptionsTemplatesAdd
+  OptionsTemplatesAdd,
+  OptionsTemplatesEdit
 } from '~/containers'
 import {
   Home,
@@ -53,9 +54,9 @@ export const routes = (
         <Redirect from='template' to='templates' />
         <Route path='template' >
           <Route path='add' component={OptionsTemplatesAdd} />
-          {/* <Route path=':id' >
-            <IndexRoute component={OptionsGroupsEdit} />
-          </Route> */}
+          <Route path=':id' >
+            <IndexRoute component={OptionsTemplatesEdit} />
+          </Route>
         </Route>
       </Route>
 

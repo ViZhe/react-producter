@@ -26,6 +26,7 @@ const OptionsTemplatesList = ({options}) => {
           <th>name</th>
           <th>title</th>
           <th>total groups</th>
+          <th>edit</th>
           <th>destroy</th>
         </tr>
       </thead>
