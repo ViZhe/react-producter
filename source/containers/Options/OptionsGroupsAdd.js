@@ -8,8 +8,13 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsGroupsAddContainer extends Component {
-  handleAddGroup = fieldData => {
-    hz.optionsGroups.store(fieldData).subscribe(
+  handleAddGroup = data => {
+    if (!Object.keys(data).length) {
+      console.info('handleAddGroup: Поля не изменились.')
+      return
+    }
+
+    hz.optionsGroups.store(data).subscribe(
       res => console.info(`Create - Group - Success\nId: "${res.id}".`),
       err => console.error(`Create - Group - Fail: ${err}`),
       () => this.props.resetForm()

@@ -8,8 +8,13 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsTemplatesAddContainer extends Component {
-  handleAddTemplate = templateData => {
-    hz.optionsTemplates.store(templateData).subscribe(
+  handleAddTemplate = data => {
+    if (!Object.keys(data).length) {
+      console.info('handleAddTemplate: Поля не изменились.')
+      return
+    }
+
+    hz.optionsTemplates.store(data).subscribe(
       res => console.info(`Create - Template - Success\nId: "${res.id}".`),
       err => console.error(`Create - Template - Fail: ${err}`),
       () => this.props.resetForm()

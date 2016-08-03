@@ -8,18 +8,19 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsTemplatesEditContainer extends Component {
-  handleUpdateTemplate = templateData => {
-    if (Object.keys(templateData).length > 0) {
-      hz.optionsTemplates.update({
-        ...templateData,
-        id: this.props.params.id
-      }).subscribe(
-        res => console.info(`Update - Template - Success\nId: "${res.id}".`),
-        err => console.error(`Update - Template - Fail: ${err}`)
-      )
-    } else {
-      console.info('updateTemplate', 'Поля не изменились.')
+  handleUpdateTemplate = data => {
+    if (!Object.keys(data).length) {
+      console.info('handleUpdateTemplate: Поля не изменились.')
+      return
     }
+
+    hz.optionsTemplates.update({
+      ...data,
+      id: this.props.params.id
+    }).subscribe(
+      res => console.info(`Update - Template - Success\nId: "${res.id}".`),
+      err => console.error(`Update - Template - Fail: ${err}`)
+    )
   }
   render() {
     const template = this.props.options.templates.filter(template =>

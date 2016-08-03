@@ -8,8 +8,13 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsFieldsAddContainer extends Component {
-  handleAddField = fieldData => {
-    hz.optionsFields.store(fieldData).subscribe(
+  handleAddField = data => {
+    if (!Object.keys(data).length) {
+      console.info('handleAddField: Поля не изменились.')
+      return
+    }
+
+    hz.optionsFields.store(data).subscribe(
       res => console.info(`Create - Field - Success\nID: "${res.id}".`),
       err => console.error(`Create - Field - Fail: ${err}`),
       () => this.props.resetForm()

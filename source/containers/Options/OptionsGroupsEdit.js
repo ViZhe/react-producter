@@ -8,18 +8,19 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsGroupsEditContainer extends Component {
-  handleUpdateGroup = groupData => {
-    if (Object.keys(groupData).length > 0) {
-      hz.optionsGroups.update({
-        ...groupData,
-        id: this.props.params.id
-      }).subscribe(
-        res => console.info(`Update - Group - Success\nId: "${res.id}".`),
-        err => console.error(`Update - Group - Fail: ${err}`)
-      )
-    } else {
-      console.info('updateGroup', 'Поля не изменились.')
+  handleUpdateGroup = data => {
+    if (!Object.keys(data).length) {
+      console.info('handleUpdateGroup: Поля не изменились.')
+      return
     }
+
+    hz.optionsGroups.update({
+      ...data,
+      id: this.props.params.id
+    }).subscribe(
+      res => console.info(`Update - Group - Success\nId: "${res.id}".`),
+      err => console.error(`Update - Group - Fail: ${err}`)
+    )
   }
   render() {
     const group = this.props.options.groups.filter(group =>
