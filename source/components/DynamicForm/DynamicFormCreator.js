@@ -24,79 +24,57 @@ class DynamicFormCreator extends Component {
     })
   }
   render() {
-    const {options, template, onSubmit, submitButtonText} = this.props
-
-    const fields = []
-    const initialValues = {}
+    const {options: {templates, groups, fields}, template, onSubmit, submitButtonText} = this.props
     const validateList = {}
 
-    const currentTemplate = options.templates.filter(tpl =>
-      tpl.name === template
-    )[0]
-    const currentGroups = options.groups.filter(group =>
-      currentTemplate.groups.indexOf(group.id) >= 0
+    const currentTemplate = templates.find(({name}) => name === template)
+    const currentGroups = groups.filter(({id}) =>
+      currentTemplate.groups.indexOf(id) >= 0
     )
 
-    currentGroups.forEach(group =>
-      options.fields.filter(field => group.fields.indexOf(field.id) >= 0)
-        .forEach(field => {
-          const fieldName = field.name
-          const fieldDefault = field.default
-          const fieldValidate = field.validate
-
-          fields.push(fieldName)
-
-          if (fieldDefault !== '' && typeof fieldDefault !== 'undefined') {
-            initialValues[fieldName] = fieldDefault
-          }
-
-          if (fieldValidate !== '' && typeof fieldValidate !== 'undefined') {
-            validateList[fieldName] = fieldValidate
-          }
-        })
-    )
+    fields.forEach(({name, validate}) => {
+      if (validate) {
+        validateList[name] = validate
+      }
+    })
 
     const validate = values => {
       const errors = {}
 
       for (const fieldName in validateList) {
-        if ({}.hasOwnProperty.call(validateList, fieldName)) {
-          const validations = validateList[fieldName]
-
-          validations.forEach(valid => {
-            if (errors[fieldName]) {
-              return
-            }
-            const type = valid.type
-
-            if (type === 'regex') {
-              const regex = new RegExp(valid.regex, 'i')
-              if (!regex.test(values[fieldName])) {
-                errors[fieldName] = valid.title
-              }
-            } else if (type === 'required') {
-              if (!values[fieldName]) {
-                errors[fieldName] = valid.title
-              }
-            }
-
-            // TODO: add more validators
-          })
+        if (!{}.hasOwnProperty.call(validateList, fieldName)) {
+          return
         }
+
+        validateList[fieldName].forEach(({type, ...valid}) => {
+          if (errors[fieldName]) {
+            return
+          }
+
+          if (type === 'required') {
+            if (!values[fieldName]) {
+              errors[fieldName] = valid.title
+            }
+          } else if (type === 'regex') {
+            const regex = new RegExp(valid.regex, 'i')
+            if (!regex.test(values[fieldName])) {
+              errors[fieldName] = valid.title
+            }
+          }
+
+          // TODO: add more validators
+        })
       }
 
       return errors
     }
 
     return <DynamicForm
-      groupsList={currentGroups}
-      fieldsList={options.fields}
+      groups={currentGroups}
       fields={fields}
-      initialValues={initialValues}
       validate={validate}
       onSubmit={onSubmit}
       submitButtonText={submitButtonText}
-      // normalize={{title: value => value && value.toUpperCase()}} //  TODO: check it
       />
   }
 }

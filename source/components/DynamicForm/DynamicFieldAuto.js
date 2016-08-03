@@ -1,41 +1,44 @@
 
-import React, {PropTypes} from 'react'
-
-import DynamicFieldDefault from './DynamicFieldDefault'
-import DynamicFieldTextarea from './DynamicFieldTextarea'
-import DynamicFieldCheckbox from './DynamicFieldCheckbox'
-import DynamicFieldRadio from './DynamicFieldRadio'
-import DynamicFieldSelect from './DynamicFieldSelect'
+import React from 'react'
+import {Field} from 'redux-form'
 
 
-const DynamicFieldAuto = ({field, option}) => {
-  option.title = field.title
+const renderFieldDefault = ({title, meta: {touched, error}, input, ...rest}) => {
+  let field
 
+  if (rest.type === 'textarea') {
+    field = <textarea {...rest} {...input} />
+  } else {
+    field = <input {...rest} {...input} />
+  }
+
+  return <label>
+    {title}
+    {field}
+    {touched && error && <span>{error}</span>}
+    <br />
+  </label>
+}
+
+const DynamicFieldAuto = ({...field}) => {
   let output
+
   switch (field.type) {
-    case 'textarea':
-      output = <DynamicFieldTextarea field={field} option={option} />
-      break
-    case 'checkbox':
-      output = <DynamicFieldCheckbox field={field} option={option} />
-      break
-    case 'radio':
-      output = <DynamicFieldRadio field={field} option={option} />
-      break
-    case 'select':
-      output = <DynamicFieldSelect field={field} option={option} />
-      break
+    // case 'checkbox':
+    //   output = <Field component={renderFieldCheckbox} {...field} />
+    //   break
+    // case 'radio':
+    //   output = <Field component={renderFieldRadio} {...field} />
+    //   break
+    // case 'select':
+    //   output = <Field component={renderFieldSelect} {...field} />
+    //   break
     default:
-      output = <DynamicFieldDefault field={field} option={option} />
+      output = <Field component={renderFieldDefault} {...field} />
   }
 
   return output
 }
 
-
-DynamicFieldAuto.propTypes = {
-  field: PropTypes.object.isRequired,
-  option: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
-}
 
 export default DynamicFieldAuto

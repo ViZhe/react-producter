@@ -1,47 +1,42 @@
 
 import React from 'react'
-// import React, {PropTypes} from 'react'
 import {reduxForm} from 'redux-form'
 import {connect} from 'react-redux'
 
 import DynamicFieldAuto from './DynamicFieldAuto'
 
 
-const DynamicForm = ({fields, groupsList, fieldsList, handleSubmit, submitButtonText}) => {
-  const optionGroups = groupsList
-    .filter(group => groupsList.indexOf(group) >= 0)
-    .map((group, index) =>
-      <div key={index} className='b-dynamic-form__group' >
-        <div className='b-dynamic-form__header' >{group.title} - ({group.fields.length})</div>
-        {fieldsList
-          .filter(field =>
-            fields[field.name] && group.fields.indexOf(field.id) >= 0
-          )
-          .map((field, index) =>
-            <DynamicFieldAuto
-              key={index}
-              field={field}
-              option={fields[field.name]}
-              />
-          )}
-      </div>
-    )
+const DynamicForm = ({groups, fields, handleSubmit, submitButtonText}) => {
+  const formInner = groups.map((group, index) => {
+    return <div key={index} className='b-dynamic-form__group' >
+      <div className='b-dynamic-form__header' >{group.title} - ({group.fields.length})</div>
 
-  const empty = <div className='b-dynamic-form__empty' >Параметров нет.</div>
-  const form = <form onSubmit={handleSubmit} className='b-dynamic-form'>
-    {optionGroups}
+      {fields.filter(field => group.fields.indexOf(field.id) >= 0)
+        .sort((a, b) => a.title > b.title) // TODO: ability to change the order
+        .map(({type, name, title, defaultValue, placeholder}, index) => {
+          return <DynamicFieldAuto
+            key={index}
+            type={type}
+            name={name}
+            title={title}
+            defaultValue={defaultValue}
+            placeholder={placeholder}
+            // normalize={value => value.toUpperCase()}
+            />
+        })}
+    </div>
+  })
+
+  const empty = <div>Параметров нет.</div>
+  const form = <form onSubmit={handleSubmit} >
+    {formInner}
     <button>{submitButtonText || 'Отправить'}</button>
   </form>
 
-  return optionGroups ? form : empty
+  return formInner ? form : empty
 }
 
-// TODO: do it
-// DynamicForm.propTypes = {
-//   field: PropTypes.object.isRequired
-// }
-// export default DynamicForm
+
 export default connect()(reduxForm({
-  form: 'dynamicForm',
-  getFormState: state => state.form
+  form: 'dynamicForm'
 })(DynamicForm))
