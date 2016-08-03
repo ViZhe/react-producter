@@ -18,6 +18,9 @@ npm start
   - [X] list
   - [ ] edit
   - [X] destroy
+- [ ] update OptionsFields
+  - [ ] add validate
+  - [ ] add normalize
 - [ ] Remove hz.store && hz.remove && hz.update in reduser
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
