@@ -16,6 +16,11 @@ class EditProduct extends Component {
     })
   }
   handleUpdateProduct = data => {
+    if (!Object.keys(data).length) {
+      console.info('handleUpdateProduct: Поля не изменились.')
+      return
+    }
+
     hz.products.update({
       id: this.props.params.id,
       updatedAt: Math.floor(Date.now() / 1000), // get timestamp

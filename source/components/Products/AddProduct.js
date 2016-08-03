@@ -9,14 +9,17 @@ import * as hz from '~/utils/horizon/helpers'
 
 class AddProduct extends Component {
   handleAddProduct = data => {
-    const product = {
-      isDeleted: false,
-      isActivated: false,
-      createdAt: Math.floor(Date.now() / 1000), // get timestamp
-      options: data
+    if (!Object.keys(data).length) {
+      console.info('handleAddProduct: Поля не изменились.')
+      return
     }
 
-    hz.products.store(product).subscribe(
+    hz.products.store({
+      isActivated: false,
+      isDeleted: false,
+      createdAt: Math.floor(Date.now() / 1000), // get timestamp
+      options: data
+    }).subscribe(
       res => console.info(`Create - Product - Success\nID: "${res.id}"`),
       err => console.error(`Create - Product - Fail: ${err}`),
       () => this.props.resetForm()
