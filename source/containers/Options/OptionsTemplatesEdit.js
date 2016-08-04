@@ -18,14 +18,14 @@ class OptionsTemplatesEditContainer extends Component {
       ...data,
       id: this.props.params.id
     }).subscribe(
-      res => console.info(`Update - Template - Success\nId: "${res.id}".`),
+      res => console.info(`Update - Template - Success\nID: "${res.id}".`),
       err => console.error(`Update - Template - Fail: ${err}`)
     )
   }
   render() {
-    const template = this.props.options.templates.filter(template =>
-      template.id === this.props.params.id
-    )[0]
+    const template = this.props.options.templates.find(({id}) =>
+      id === this.props.params.id
+    )
 
     return <OptionsTemplatesEdit
       template={template || {}}

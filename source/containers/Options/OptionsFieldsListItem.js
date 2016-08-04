@@ -12,7 +12,7 @@ class OptionsFieldsListItemContainer extends Component {
 
     if (isAgree) {
       hz.optionsFields.remove(id).subscribe(
-        res => console.info(`Destroy - Field - Success\nId: "${res.id}"`),
+        res => console.info(`Destroy - Field - Success\nID: "${res.id}"`),
         err => console.error(`Destroy - Field - Fail\nError: "${err}"`)
       )
     }

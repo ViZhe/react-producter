@@ -18,14 +18,14 @@ class OptionsFieldsEditContainer extends Component {
       ...data,
       id: this.props.params.id
     }).subscribe(
-      res => console.info(`Update - Field - Success\nId: "${res.id}".`),
+      res => console.info(`Update - Field - Success\nID: "${res.id}".`),
       err => console.error(`Update - Field - Fail: ${err}`)
     )
   }
   render() {
-    const field = this.props.options.fields.filter(field =>
-      field.id === this.props.params.id
-    )[0]
+    const field = this.props.options.fields.find(({id}) =>
+      id === this.props.params.id
+    )
 
     return <OptionsFieldsEdit
       field={field || {}}

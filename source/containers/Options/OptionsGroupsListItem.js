@@ -12,7 +12,7 @@ class OptionsGroupsListItemContainer extends Component {
 
     if (isAgree) {
       hz.optionsGroups.remove(id).subscribe(
-        res => console.info(`Destroy - Group - Success\nId: "${res.id}"`),
+        res => console.info(`Destroy - Group - Success\nID: "${res.id}"`),
         err => console.error(`Destroy - Group - Fail\nError: "${err}"`)
       )
     }

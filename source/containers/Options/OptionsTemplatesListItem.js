@@ -12,7 +12,7 @@ class OptionsTemplatesListItemContainer extends Component {
 
     if (isAgree) {
       hz.optionsTemplates.remove(this.props.template.id).subscribe(
-        res => console.info(`Destroy - Group - Success\nId: "${res.id}"`),
+        res => console.info(`Destroy - Group - Success\nID: "${res.id}"`),
         err => console.error(`Destroy - Group - Fail\nError: "${err}"`)
       )
     }

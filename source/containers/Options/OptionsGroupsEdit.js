@@ -18,14 +18,14 @@ class OptionsGroupsEditContainer extends Component {
       ...data,
       id: this.props.params.id
     }).subscribe(
-      res => console.info(`Update - Group - Success\nId: "${res.id}".`),
+      res => console.info(`Update - Group - Success\nID: "${res.id}".`),
       err => console.error(`Update - Group - Fail: ${err}`)
     )
   }
   render() {
-    const group = this.props.options.groups.filter(group =>
-      group.id === this.props.params.id
-    )[0]
+    const group = this.props.options.groups.find(({id}) =>
+      id === this.props.params.id
+    )
 
     return <OptionsGroupsEdit
       group={group || {}}
