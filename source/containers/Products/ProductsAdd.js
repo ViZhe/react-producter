@@ -3,24 +3,22 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {reset} from 'redux-form'
 
-import {
-  loadOptionsTemplates
-} from '~/core/options/actions'
-import {DynamicFormCreator} from '~/components'
+import {ProductsAdd} from '~/components'
+import {loadOptionsTemplates} from '~/core/options/actions'
 import * as hz from '~/utils/horizon/helpers'
 
 
-class AddProduct extends Component {
+class ProductsAddContainer extends Component {
   componentWillMount() {
     this.setState({currentTemplate: 'defaultTemplate'})
     hz.optionsTemplates.watch().subscribe(response => {
       this.props.loadOptionsTemplates(response)
     })
   }
-  handleSelectTemplate = event => {
+  selectTemplate = event => {
     this.setState({currentTemplate: event.target.value})
   }
-  handleAddProduct = data => {
+  addProduct = data => {
     if (!Object.keys(data).length) {
       console.info('handleAddProduct: Поля не изменились.')
       return
@@ -39,24 +37,12 @@ class AddProduct extends Component {
     )
   }
   render() {
-    const {options: {templates}} = this.props
-    return <div className='c-area-list'>
-      <h2>Add Product</h2>
-
-      <p>Select template:</p>
-      <select onChange={this.handleSelectTemplate}>
-        {templates.map(({name, title}, index) =>
-          <option key={index} value={name}>{title}</option>
-        )}
-      </select>
-
-      <p>Create product:</p>
-      <DynamicFormCreator
-        template={this.state.currentTemplate}
-        onSubmit={this.handleAddProduct}
-        submitButtonText='Создать товар'
-        />
-    </div>
+    return <ProductsAdd
+      selectTemplateHandler={this.selectTemplate}
+      addProductHandler={this.addProduct}
+      templates={this.props.options.templates}
+      template={this.state.currentTemplate}
+      />
   }
 }
 
@@ -75,4 +61,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddProduct)
+)(ProductsAddContainer)

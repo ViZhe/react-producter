@@ -10,7 +10,8 @@ import {
   OptionsGroupsAdd,
   OptionsGroupsEdit,
   OptionsTemplatesAdd,
-  OptionsTemplatesEdit
+  OptionsTemplatesEdit,
+  ProductsAdd
 } from '~/containers'
 import {
   Home,
@@ -19,7 +20,6 @@ import {
   OptionsGroups,
   OptionsTemplates,
   Products,
-  AddProduct,
   EditProduct
 } from '~/components'
 
@@ -63,7 +63,7 @@ export const routes = (
       <Route path='products' component={Products} />
       <Redirect from='product' to='products' />
       <Route path='product' >
-        <Route path='add' component={AddProduct} />
+        <Route path='add' component={ProductsAdd} />
         <Route path=':id' >
           <IndexRoute component={EditProduct} /> {/* TODO: pageProduct */}
           <Route path='edit' component={EditProduct} />

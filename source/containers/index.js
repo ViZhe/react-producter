@@ -2,6 +2,7 @@
 export App from './App'
 
 
+export ProductsAdd from './Products/ProductsAdd'
 export ProductsList from './Products/ProductsList'
 export ProductsListItem from './Products/ProductsListItem'
 

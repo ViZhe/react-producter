@@ -1,17 +1,20 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 
-import AddProduct from './AddProduct'
-import {ProductsList} from '~/containers'
+import {
+  ProductsAdd,
+  ProductsList
+} from '~/containers'
 
 
-export default class Products extends Component {
-  render() {
-    return <div>
-      <h2>Products</h2>
+const Products = () => {
+  return <div>
+    <h2>Products</h2>
 
-      <AddProduct />
-      <ProductsList />
-    </div>
-  }
+    <ProductsAdd />
+    <ProductsList />
+  </div>
 }
+
+
+export default Products
