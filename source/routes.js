@@ -11,7 +11,8 @@ import {
   OptionsGroupsEdit,
   OptionsTemplatesAdd,
   OptionsTemplatesEdit,
-  ProductsAdd
+  ProductsAdd,
+  ProductsItem
 } from '~/containers'
 import {
   Home,
@@ -65,7 +66,7 @@ export const routes = (
       <Route path='product' >
         <Route path='add' component={ProductsAdd} />
         <Route path=':id' >
-          <IndexRoute component={EditProduct} /> {/* TODO: pageProduct */}
+          <IndexRoute component={ProductsItem} />
           <Route path='edit' component={EditProduct} />
         </Route>
       </Route>

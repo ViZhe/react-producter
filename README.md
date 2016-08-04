@@ -13,10 +13,11 @@ npm start
 
 ## TODO
 - [ ] Products
-  - [ ] add
-    - [ ] update DynamicForm to redux-form v6
+  - [X] add PrdouctsItem
+  - [ ] update edit
+  - [X] add
+    - [X] update DynamicForm to redux-form v6
   - [X] list
-  - [ ] edit
   - [X] destroy
 - [ ] update OptionsFields
   - [ ] add validate

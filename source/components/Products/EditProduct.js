@@ -26,8 +26,8 @@ class EditProduct extends Component {
       updatedAt: Math.floor(Date.now() / 1000), // get timestamp
       options: data
     }).subscribe(
-      res => console.info(`Type: Product Update\nID: "${res.id}"`),
-      err => console.error('Update Fail', err)
+      res => console.info(`Update - Product - Success\nID: "${res.id}"`),
+      err => console.error(`Update - Product - Fail: ${err}`)
     )
   }
   render() {

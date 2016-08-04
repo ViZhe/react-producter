@@ -8,6 +8,7 @@ export DynamicForm from './DynamicForm/DynamicForm'
 
 export Products from './Products/Products'
 export ProductsAdd from './Products/ProductsAdd'
+export ProductsItem from './Products/ProductsItem'
 export ProductsList from './Products/ProductsList'
 export ProductsListItem from './Products/ProductsListItem'
 export EditProduct from './Products/EditProduct'
