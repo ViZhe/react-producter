@@ -9,14 +9,13 @@ import {
 import {DynamicFormCreator} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
-/*eslint-disable*/
+
 class AddProduct extends Component {
   componentWillMount() {
     this.setState({currentTemplate: 'defaultTemplate'})
     hz.optionsTemplates.watch().subscribe(response => {
-      this.props.dispatch(loadOptionsTemplates(response))
+      this.props.loadOptionsTemplates(response)
     })
-
   }
   handleSelectTemplate = event => {
     this.setState({currentTemplate: event.target.value})
@@ -31,6 +30,7 @@ class AddProduct extends Component {
       isActivated: false,
       isDeleted: false,
       createdAt: Math.floor(Date.now() / 1000), // get timestamp
+      template: this.state.currentTemplate,
       options: data
     }).subscribe(
       res => console.info(`Create - Product - Success\nID: "${res.id}"`),
@@ -45,8 +45,8 @@ class AddProduct extends Component {
 
       <p>Select template:</p>
       <select onChange={this.handleSelectTemplate}>
-        {templates.map(({name, title}) =>
-          <option value={name}>{title}</option>
+        {templates.map(({name, title}, index) =>
+          <option key={index} value={name}>{title}</option>
         )}
       </select>
 
@@ -68,6 +68,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  loadOptionsTemplates: data => dispatch(loadOptionsTemplates(data)),
   resetForm: () => dispatch(reset('dynamicForm'))
 })
 
