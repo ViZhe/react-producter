@@ -33,19 +33,23 @@ class EditProduct extends Component {
   render() {
     const {products} = this.props
 
-    const product = products.data.filter(product => {
-      return product.id === this.props.params.id
-    })
+    const product = products.data.find(({id}) => id === this.props.params.id)
 
-    const former = <DynamicFormCreator
-      template={product.template || 'defaultTemplate'}
-      onSubmit={this.handleUpdateProduct}
-      submitButtonText='Обновить товар'
-      />
+    let output
+    if (product) {
+      output = <DynamicFormCreator
+        template={product.template}
+        product={product}
+        onSubmit={this.handleUpdateProduct}
+        submitButtonText='Обновить товар'
+        />
+    } else {
+      output = 'Данные загружаются'
+    }
 
     return <div>
       <h2>Edit Product - {this.props.params.id}</h2>
-      {product ? former : 'Данные загружаются'}
+      {output}
     </div>
   }
 }

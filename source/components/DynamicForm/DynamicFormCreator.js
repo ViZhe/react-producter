@@ -24,7 +24,7 @@ class DynamicFormCreator extends Component {
     })
   }
   render() {
-    const {options: {templates, groups, fields}, template, onSubmit, submitButtonText} = this.props
+    const {product, template, options: {templates, groups, fields}, onSubmit, submitButtonText} = this.props
     const validateList = {}
 
     const currentTemplate = templates.find(({name}) => name === template)
@@ -70,6 +70,8 @@ class DynamicFormCreator extends Component {
     }
 
     return <DynamicForm
+      product={product}
+      template={template}
       groups={currentGroups}
       fields={fields}
       validate={validate}
