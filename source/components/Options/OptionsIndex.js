@@ -2,11 +2,9 @@
 import React from 'react'
 
 import {
-  OptionsTemplatesList
-} from '~/containers'
-import {
-  OptionsFields,
-  OptionsGroups
+  OptionsTemplates,
+  OptionsGroups,
+  OptionsFields
 } from '~/components'
 
 
@@ -16,7 +14,7 @@ const OptionsIndex = () => {
 
     <OptionsFields />
     <OptionsGroups />
-    <OptionsTemplatesList />
+    <OptionsTemplates />
   </div>
 }
 
