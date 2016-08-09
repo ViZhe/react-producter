@@ -12,12 +12,14 @@ const renderFieldDefault = ({title, meta: {touched, error}, input, ...rest}) => 
     field = <input {...rest} {...input} />
   }
 
-  return <label>
-    {title}
-    {field}
-    {touched && error && <span>{error}</span>}
-    <br />
-  </label>
+  return (
+    <label>
+      {title}
+      {field}
+      {touched && error && <span>{error}</span>}
+      <br />
+    </label>
+  )
 }
 
 const DynamicFieldAuto = ({...field}) => {

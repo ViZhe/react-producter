@@ -24,7 +24,7 @@
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
     "react/jsx-space-before-closing": [2, "always"],
-    "react/wrap-multilines": 0,
+    "react/jsx-wrap-multilines": 0,
 
     "react/prop-types": 0
   }

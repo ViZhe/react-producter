@@ -27,10 +27,12 @@ const DynamicForm = ({product, groups, fields, handleSubmit, submitButtonText}) 
   })
 
   const empty = <div>Параметров нет.</div>
-  const form = <form onSubmit={handleSubmit} >
-    {formInner}
-    <button>{submitButtonText || 'Отправить'}</button>
-  </form>
+  const form = (
+    <form onSubmit={handleSubmit} >
+      {formInner}
+      <button>{submitButtonText || 'Отправить'}</button>
+    </form>
+  )
 
   return formInner ? form : empty
 }
