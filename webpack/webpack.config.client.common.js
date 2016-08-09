@@ -34,14 +34,14 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loaders: ['eslint'],
         exclude: /node_modules/
       }
     ],
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loaders: ['react-hot', 'babel-loader'],
         plugins: ['transform-runtime'],
         exclude: /node_modules/
