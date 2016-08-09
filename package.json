@@ -28,7 +28,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "eslint": "^3.2.2",
     "eslint-config-xo": "^0.15.2",
-    "eslint-config-xo-react": "^0.8.0",
+    "eslint-config-xo-react": "^0.9.0",
     "eslint-loader": "^1.5.0",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-react": "^6.0.0",
