@@ -7,14 +7,14 @@ import {
 } from '~/containers'
 
 
-const Home = () => {
-  return <div>
+const Home = () => (
+  <div>
     <h2>Home</h2>
 
     <ProductsAdd />
     <ProductsList />
   </div>
-}
+)
 
 
 export default Home
