@@ -4,28 +4,25 @@
     "node": true
   },
   "parser": "babel-eslint",
-  "extends": [
-    "xo",
-    "xo/esnext",
-    "xo-react"
-  ],
-  "plugins": ["react"],
+  "extends": "airbnb",
+  "plugins": ["babel"],
   "rules": {
-    "indent": [1, 2, {"SwitchCase": 1}],
+    "comma-dangle": [2, "never"],
+    "object-curly-spacing": 0,
     "jsx-quotes": [1, "prefer-single"],
-    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 1}],
-    "no-unused-vars": [2, {"args": "none"}],
-    "no-warning-comments": 0,
-    "operator-linebreak": [2, "after", {"overrides": {"?": "before", ":": "before"}}],
-    "prefer-template": 0,
     "semi": [2, "never"],
 
+    'babel/object-curly-spacing': [2, 'never'],
+    "jsx-a11y/label-has-for": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": [2, {ignore: ['^~']}],
 
-    "react/jsx-indent": [2, 2],
-    "react/jsx-indent-props": [2, 2],
-    "react/jsx-space-before-closing": [2, "always"],
-    "react/jsx-wrap-multilines": 0,
-
+    "no-console": 0,
     "react/prop-types": 0
+
+
+    # "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 1}],
+    # "no-unused-vars": [2, {"args": "none"}],
+    # "operator-linebreak": [2, "after", {"overrides": {"?": "before", ":": "before"}}],
   }
 }
