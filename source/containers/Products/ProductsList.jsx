@@ -10,7 +10,7 @@ import * as hz from '~/utils/horizon/helpers'
 class ProductsListContainer extends Component {
   componentDidMount() {
     hz.products.watch().subscribe(response => {
-      this.props.dispatch(loadProducts(response))
+      this.props.loadProducts(response)
     })
   }
   render() {
@@ -27,6 +27,11 @@ const mapStateToProps = state => ({
   products: state.products.toJS()
 })
 
+const mapDispatchToProps = dispatch => ({
+  loadProducts: data => dispatch(loadProducts(data))
+})
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ProductsListContainer)

@@ -3,14 +3,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {ProductsEdit} from '~/components'
-import {loadProducts} from '~/core/options/actions'
+import {loadProducts} from '~/core/products/actions'
 import * as hz from '~/utils/horizon/helpers'
 
 
 class ProductsEditContainer extends Component {
   componentDidMount() {
     hz.products.watch().subscribe(response => {
-      this.props.dispatch(loadProducts(response))
+      this.props.loadProducts(response)
     })
   }
   updateProduct = data => {
@@ -29,9 +29,12 @@ class ProductsEditContainer extends Component {
     )
   }
   render() {
-    const product = this.props.products.data.find(({id}) => id === this.props.params.id)
+    const {products} = this.props
+    const product = products.data.find(({id}) => id === this.props.params.id)
+
     return (
       <ProductsEdit
+        isLoading={products.isLoading}
         product={product}
         updateProductHandler={this.updateProduct}
       />

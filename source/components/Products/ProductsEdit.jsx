@@ -4,17 +4,20 @@ import React from 'react'
 import {DynamicFormCreator} from '~/components'
 
 
-const ProductsEdit = ({product, updateProductHandler}) => (
+const ProductsEdit = ({isLoading, product, updateProductHandler}) => (
   <div>
-    <h2>Edit Product - {this.props.params.id}</h2>
+    <h2>Edit Product</h2>
 
-    <DynamicFormCreator
-      product={product}
-      template={product.template}
-      onSubmit={updateProductHandler}
-      submitButtonText='Обновить товар'
-    />
+    {!isLoading ? (
+      <DynamicFormCreator
+        product={product}
+        template={product.template}
+        onSubmit={updateProductHandler}
+        submitButtonText='Обновить товар'
+      />
+    ) : 'Данные загружаются'}
   </div>
+
 )
 
 
