@@ -50,26 +50,26 @@ export const initialState = fromJS({
 export function optionsReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_OPTIONS:
-      return state.withMutations(state => {
-        state.set('templates', action.payload.templates)
-        state.set('groups', action.payload.groups)
-        state.set('fields', action.payload.fields)
-        state.set('isLoading', false)
+      return state.withMutations(oldState => {
+        oldState.set('templates', action.payload.templates)
+        oldState.set('groups', action.payload.groups)
+        oldState.set('fields', action.payload.fields)
+        oldState.set('isLoading', false)
       })
 
     case LOAD_OPTIONS_TEMPLATES:
-      return state.withMutations(state => {
-        state.set('templates', action.payload)
+      return state.withMutations(oldState => {
+        oldState.set('templates', action.payload)
       })
 
     case LOAD_OPTIONS_GROUPS:
-      return state.withMutations(state => {
-        state.set('groups', action.payload)
+      return state.withMutations(oldState => {
+        oldState.set('groups', action.payload)
       })
 
     case LOAD_OPTIONS_FIELDS:
-      return state.withMutations(state => {
-        state.set('fields', action.payload)
+      return state.withMutations(oldState => {
+        oldState.set('fields', action.payload)
       })
 
     default:
