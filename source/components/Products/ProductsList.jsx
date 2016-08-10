@@ -13,30 +13,32 @@ const ProductsList = ({products}) => {
     <ProductsListItem
       key={index}
       product={product}
-      />
+    />
   )
   const productsEmpty = <tr><td colSpan={7}>Товаров нет</td></tr>
   const productsLoading = <tr><td colSpan={7}>Товары загружаются</td></tr>
 
-  return <div className='c-products-list' >
-    <h2>Products List</h2>
-    <table style={tableStyle} >
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>o.name</th>
-          <th>template</th>
-          <th>edit</th>
-          <th>isDeleted</th>
-          <th>isActivated</th>
-          <th>destroy</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.isLoading ? productsLoading : productsList || productsEmpty}
-      </tbody>
-    </table>
-  </div>
+  return (
+    <div className='c-products-list' >
+      <h2>Products List</h2>
+      <table style={tableStyle} >
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>o.name</th>
+            <th>template</th>
+            <th>edit</th>
+            <th>isDeleted</th>
+            <th>isActivated</th>
+            <th>destroy</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.isLoading ? productsLoading : productsList || productsEmpty}
+        </tbody>
+      </table>
+    </div>
+  )
 }
 
 

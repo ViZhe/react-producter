@@ -37,20 +37,24 @@ class EditProduct extends Component {
 
     let output
     if (product) {
-      output = <DynamicFormCreator
-        template={product.template}
-        product={product}
-        onSubmit={this.handleUpdateProduct}
-        submitButtonText='Обновить товар'
+      output = (
+        <DynamicFormCreator
+          template={product.template}
+          product={product}
+          onSubmit={this.handleUpdateProduct}
+          submitButtonText='Обновить товар'
         />
+      )
     } else {
       output = 'Данные загружаются'
     }
 
-    return <div>
-      <h2>Edit Product - {this.props.params.id}</h2>
-      {output}
-    </div>
+    return (
+      <div>
+        <h2>Edit Product - {this.props.params.id}</h2>
+        {output}
+      </div>
+    )
   }
 }
 

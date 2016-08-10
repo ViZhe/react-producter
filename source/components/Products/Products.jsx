@@ -7,14 +7,14 @@ import {
 } from '~/containers'
 
 
-const Products = () => {
-  return <div>
+const Products = () => (
+  <div>
     <h2>Products</h2>
 
     <ProductsAdd />
     <ProductsList />
   </div>
-}
+)
 
 
 export default Products

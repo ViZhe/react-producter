@@ -4,8 +4,8 @@ import React from 'react'
 import {DynamicFormCreator} from '~/components'
 
 
-const OptionsTemplatesAdd = ({template, templates, selectTemplateHandler, addProductHandler}) => {
-  return <div className='c-area-list'>
+const OptionsTemplatesAdd = ({template, templates, selectTemplateHandler, addProductHandler}) => (
+  <div className='c-area-list'>
     <h2>Add Product</h2>
 
     <p>Select template:</p>
@@ -20,9 +20,9 @@ const OptionsTemplatesAdd = ({template, templates, selectTemplateHandler, addPro
       template={template}
       onSubmit={addProductHandler}
       submitButtonText='Создать товар'
-      />
+    />
   </div>
-}
+)
 
 
 export default OptionsTemplatesAdd
