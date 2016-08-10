@@ -14,9 +14,11 @@ class ProductsListContainer extends Component {
     })
   }
   render() {
-    return <ProductsList
-      {...this.props}
+    return (
+      <ProductsList
+        {...this.props}
       />
+    )
   }
 }
 

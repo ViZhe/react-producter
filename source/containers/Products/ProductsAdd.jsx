@@ -37,12 +37,14 @@ class ProductsAddContainer extends Component {
     )
   }
   render() {
-    return <ProductsAdd
-      selectTemplateHandler={this.selectTemplate}
-      addProductHandler={this.addProduct}
-      templates={this.props.options.templates}
-      template={this.state.currentTemplate}
+    return (
+      <ProductsAdd
+        selectTemplateHandler={this.selectTemplate}
+        addProductHandler={this.addProduct}
+        templates={this.props.options.templates}
+        template={this.state.currentTemplate}
       />
+    )
   }
 }
 

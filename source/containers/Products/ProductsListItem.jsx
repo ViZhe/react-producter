@@ -11,7 +11,12 @@ class ProductsListItemContainer extends Component {
       id,
       [field]: value
     }).subscribe(
-      res => console.info(`Type: Product Field Update\nID: "${res.id}"\nField: "${field}"\nValue: "${value}"`),
+      res => console.info(`
+        Type: Product Field Update
+        ID: "${res.id}"
+        Field: "${field}"
+        Value: "${value}"
+      `),
       err => console.error('Update Fail', err)
     )
   }
@@ -25,7 +30,9 @@ class ProductsListItemContainer extends Component {
   }
   destroyProduct = () => {
     const id = this.props.product.id
-    const isAgree = confirm(`ID: ${id}\nReally want to destroy the product?`) // eslint-disable-line no-alert
+    /* eslint-disable no-alert */
+    const isAgree = confirm(`ID: ${id}\nReally want to destroy the product?`)
+    /* eslint-enable no-alert */
 
     if (isAgree) {
       hz.products.remove(this.props.product.id).subscribe(
@@ -35,12 +42,14 @@ class ProductsListItemContainer extends Component {
     }
   }
   render() {
-    return <ProductsListItem
-      toggleDeleteHandler={this.toggleDeleteProduct}
-      toggleActiveHandler={this.toggleActiveProduct}
-      destroyHandler={this.destroyProduct}
-      {...this.props}
+    return (
+      <ProductsListItem
+        toggleDeleteHandler={this.toggleDeleteProduct}
+        toggleActiveHandler={this.toggleActiveProduct}
+        destroyHandler={this.destroyProduct}
+        {...this.props}
       />
+    )
   }
 }
 

@@ -18,9 +18,11 @@ class ProductsItemContainer extends Component {
       id === this.props.params.id
     )
 
-    return <ProductsItem
-      product={product || {}}
+    return (
+      <ProductsItem
+        product={product || {}}
       />
+    )
   }
 }
 
