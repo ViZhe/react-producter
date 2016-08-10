@@ -11,6 +11,8 @@ import * as hz from '~/utils/horizon/helpers'
 class ProductsAddContainer extends Component {
   componentWillMount() {
     this.setState({currentTemplate: 'defaultTemplate'})
+  }
+  componentDidMount() {
     hz.optionsTemplates.watch().subscribe(response => {
       this.props.loadOptionsTemplates(response)
     })
@@ -20,7 +22,7 @@ class ProductsAddContainer extends Component {
   }
   addProduct = data => {
     if (!Object.keys(data).length) {
-      console.info('handleAddProduct: Поля не изменились.')
+      console.info('handleAddProduct: No change')
       return
     }
 

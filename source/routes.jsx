@@ -9,6 +9,7 @@ import {
   OptionsGroupsAdd, OptionsGroupsEdit,
   OptionsTemplatesAdd, OptionsTemplatesEdit,
   ProductsAdd,
+  ProductsEdit,
   ProductsItem
 } from '~/containers'
 import {
@@ -17,8 +18,7 @@ import {
   OptionsFields,
   OptionsGroups,
   OptionsTemplates,
-  Products,
-  EditProduct
+  Products
 } from '~/components'
 
 
@@ -64,7 +64,7 @@ const routes = (
         <Route path='add' component={ProductsAdd} />
         <Route path=':id' >
           <IndexRoute component={ProductsItem} />
-          <Route path='edit' component={EditProduct} />
+          <Route path='edit' component={ProductsEdit} />
         </Route>
       </Route>
     </Route>

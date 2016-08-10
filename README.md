@@ -12,17 +12,10 @@ npm start
 ```
 
 ## TODO
-- [ ] Products
-  - [X] add PrdouctsItem
-  - [ ] update edit
-  - [X] add
-    - [X] update DynamicForm to redux-form v6
-  - [X] list
-  - [X] destroy
 - [ ] update OptionsFields
   - [ ] add validate
   - [ ] add normalize
-- [ ] Remove hz.store && hz.remove && hz.update in reduser
+- [ ] Remove hz.store && hz.remove && hz.update in reducer
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
   - [ ] autoprefixer
@@ -39,6 +32,13 @@ npm start
 - [ ] ???
 
 ## Done
+- [X] Products
+  - [X] add PrdouctsItem
+  - [X] update edit
+  - [X] add
+    - [X] update DynamicForm to redux-form v6
+  - [X] list
+  - [X] destroy
 - [X] Update options
   - [X] load from rethinkdb with horizon
   - [X] templates pages
