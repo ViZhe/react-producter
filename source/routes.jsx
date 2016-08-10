@@ -5,12 +5,9 @@ import {Route, IndexRoute, Redirect} from 'react-router'
 import {
   App,
   Options,
-  OptionsFieldsAdd,
-  OptionsFieldsEdit,
-  OptionsGroupsAdd,
-  OptionsGroupsEdit,
-  OptionsTemplatesAdd,
-  OptionsTemplatesEdit,
+  OptionsFieldsAdd, OptionsFieldsEdit,
+  OptionsGroupsAdd, OptionsGroupsEdit,
+  OptionsTemplatesAdd, OptionsTemplatesEdit,
   ProductsAdd,
   ProductsItem
 } from '~/containers'
@@ -25,7 +22,7 @@ import {
 } from '~/components'
 
 
-export const routes = (
+const routes = (
   <div>
     <Route path='/' component={App} >
       <IndexRoute component={Home} />
@@ -74,3 +71,6 @@ export const routes = (
     <Route path='*' component={Home} /> {/* NotFound */}
   </div>
 )
+
+
+export default routes
