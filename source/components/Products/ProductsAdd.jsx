@@ -4,7 +4,7 @@ import React from 'react'
 import {DynamicFormCreator} from '~/components'
 
 
-const OptionsTemplatesAdd = ({template, templates, selectTemplateHandler, addProductHandler}) => (
+const ProductsAdd = ({template, templates, selectTemplateHandler, addProductHandler}) => (
   <div className='c-area-list'>
     <h2>Add Product</h2>
 
@@ -25,4 +25,4 @@ const OptionsTemplatesAdd = ({template, templates, selectTemplateHandler, addPro
 )
 
 
-export default OptionsTemplatesAdd
+export default ProductsAdd
