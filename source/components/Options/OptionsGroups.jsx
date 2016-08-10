@@ -7,14 +7,14 @@ import {
 } from '~/containers'
 
 
-const OptionsGroups = () => {
-  return <div>
+const OptionsGroups = () => (
+  <div>
     <h2>Options Groups</h2>
 
     <OptionsGroupsAdd />
     <OptionsGroupsList />
   </div>
-}
+)
 
 
 export default OptionsGroups

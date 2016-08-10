@@ -3,8 +3,8 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => {
-  return <div>
+const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => (
+  <div>
     <h2>Options Fields Add</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} >
@@ -29,7 +29,12 @@ const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => {
       <div>
         <label>Значение по умолчанию</label>
         <div>
-          <Field component='input' type='text' name='defaultValue' placeholder='Значение по умолчанию' />
+          <Field
+            component='input'
+            type='text'
+            name='defaultValue'
+            placeholder='Значение по умолчанию'
+          />
         </div>
       </div>
       <div>
@@ -44,7 +49,7 @@ const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => {
       </div>
     </form>
   </div>
-}
+)
 
 
 export default OptionsFieldsAdd

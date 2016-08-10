@@ -3,8 +3,8 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsGroupsAdd = ({options, onSubmit, handleSubmit}) => {
-  return <div>
+const OptionsGroupsAdd = ({options, onSubmit, handleSubmit}) => (
+  <div>
     <h2>Options Groups Add</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} >
@@ -35,7 +35,7 @@ const OptionsGroupsAdd = ({options, onSubmit, handleSubmit}) => {
       </div>
     </form>
   </div>
-}
+)
 
 
 export default OptionsGroupsAdd

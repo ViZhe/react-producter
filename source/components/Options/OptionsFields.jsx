@@ -7,14 +7,14 @@ import {
 } from '~/containers'
 
 
-const OptionsFields = () => {
-  return <div>
+const OptionsFields = () => (
+  <div>
     <h2>Options Fields</h2>
 
     <OptionsFieldsAdd />
     <OptionsFieldsList />
   </div>
-}
+)
 
 
 export default OptionsFields

@@ -7,14 +7,14 @@ import {
 } from '~/containers'
 
 
-const OptionsTemplates = () => {
-  return <div>
+const OptionsTemplates = () => (
+  <div>
     <h2>Options Templates</h2>
 
     <OptionsTemplatesAdd />
     <OptionsTemplatesList />
   </div>
-}
+)
 
 
 export default OptionsTemplates

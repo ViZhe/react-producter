@@ -10,14 +10,16 @@ const OptionsTemplatesListItem = ({template, destroyHandler}) => {
 
   const id = template.id
 
-  return <tr>
-    <td style={tdStyle} >{id}</td>
-    <td style={tdStyle} >{template.name}</td>
-    <td style={tdStyle} >{template.title}</td>
-    <td style={tdStyle} >{template.groups ? template.groups.length : 0}</td>
-    <td style={tdStyle} ><Link to={`/options/template/${id}`} >edit</Link></td>
-    <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
-  </tr>
+  return (
+    <tr>
+      <td style={tdStyle} >{id}</td>
+      <td style={tdStyle} >{template.name}</td>
+      <td style={tdStyle} >{template.title}</td>
+      <td style={tdStyle} >{template.groups ? template.groups.length : 0}</td>
+      <td style={tdStyle} ><Link to={`/options/template/${id}`} >edit</Link></td>
+      <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
+    </tr>
+  )
 }
 
 
