@@ -1,17 +1,15 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 
 import {OptionsTemplatesList} from '~/components'
 
 
-class OptionsTemplatesListContainer extends Component {
-  render() {
-    return <OptionsTemplatesList
-      {...this.props}
-      />
-  }
-}
+const OptionsTemplatesListContainer = ({options: {templates}}) => (
+  <OptionsTemplatesList
+    templates={templates}
+  />
+)
 
 
 const mapStateToProps = state => ({

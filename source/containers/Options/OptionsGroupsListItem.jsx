@@ -8,7 +8,9 @@ import * as hz from '~/utils/horizon/helpers'
 class OptionsGroupsListItemContainer extends Component {
   destroyGroup = () => {
     const id = this.props.group.id
-    const isAgree = confirm(`ID: ${id}\nReally want to destroy the group?`) // eslint-disable-line no-alert
+    /* eslint-disable no-alert */
+    const isAgree = confirm(`ID: ${id}\nReally want to destroy the group?`)
+    /* eslint-enable no-alert */
 
     if (isAgree) {
       hz.optionsGroups.remove(id).subscribe(
@@ -18,10 +20,12 @@ class OptionsGroupsListItemContainer extends Component {
     }
   }
   render() {
-    return <OptionsGroupsListItem
-      destroyHandler={this.destroyGroup}
-      {...this.props}
+    return (
+      <OptionsGroupsListItem
+        destroyHandler={this.destroyGroup}
+        {...this.props}
       />
+    )
   }
 }
 

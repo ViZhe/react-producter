@@ -12,7 +12,7 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class OptionsContainer extends Component {
-  componentDidMount() {
+  componentWillMount() {
     hz.optionsTemplates.watch().subscribe(response => {
       this.props.dispatch(loadOptionsTemplates(response))
     })
@@ -24,9 +24,11 @@ class OptionsContainer extends Component {
     })
   }
   render() {
-    return <Options
-      {...this.props}
+    return (
+      <Options
+        {...this.props}
       />
+    )
   }
 }
 

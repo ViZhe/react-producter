@@ -10,7 +10,7 @@ import * as hz from '~/utils/horizon/helpers'
 class OptionsFieldsAddContainer extends Component {
   handleAddField = data => {
     if (!Object.keys(data).length) {
-      console.info('handleAddField: Поля не изменились.')
+      console.info('handleAddField: No change')
       return
     }
 
@@ -21,10 +21,12 @@ class OptionsFieldsAddContainer extends Component {
     )
   }
   render() {
-    return <OptionsFieldsAdd
-      onSubmit={this.handleAddField}
-      {...this.props}
+    return (
+      <OptionsFieldsAdd
+        onSubmit={this.handleAddField}
+        {...this.props}
       />
+    )
   }
 }
 

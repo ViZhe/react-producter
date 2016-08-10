@@ -10,7 +10,7 @@ import * as hz from '~/utils/horizon/helpers'
 class OptionsGroupsAddContainer extends Component {
   handleAddGroup = data => {
     if (!Object.keys(data).length) {
-      console.info('handleAddGroup: Поля не изменились.')
+      console.info('handleAddGroup: No change')
       return
     }
 
@@ -21,10 +21,12 @@ class OptionsGroupsAddContainer extends Component {
     )
   }
   render() {
-    return <OptionsGroupsAdd
-      onSubmit={this.handleAddGroup}
-      {...this.props}
+    return (
+      <OptionsGroupsAdd
+        onSubmit={this.handleAddGroup}
+        {...this.props}
       />
+    )
   }
 }
 

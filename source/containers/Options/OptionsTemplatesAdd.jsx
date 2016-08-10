@@ -10,7 +10,7 @@ import * as hz from '~/utils/horizon/helpers'
 class OptionsTemplatesAddContainer extends Component {
   handleAddTemplate = data => {
     if (!Object.keys(data).length) {
-      console.info('handleAddTemplate: Поля не изменились.')
+      console.info('handleAddTemplate: No change')
       return
     }
 
@@ -21,10 +21,12 @@ class OptionsTemplatesAddContainer extends Component {
     )
   }
   render() {
-    return <OptionsTemplatesAdd
-      onSubmit={this.handleAddTemplate}
-      {...this.props}
+    return (
+      <OptionsTemplatesAdd
+        onSubmit={this.handleAddTemplate}
+        {...this.props}
       />
+    )
   }
 }
 

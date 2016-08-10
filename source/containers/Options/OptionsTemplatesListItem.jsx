@@ -8,7 +8,9 @@ import * as hz from '~/utils/horizon/helpers'
 class OptionsTemplatesListItemContainer extends Component {
   destroyTemplate = () => {
     const id = this.props.template.id
-    const isAgree = confirm(`ID: ${id}\nReally want to destroy the template?`) // eslint-disable-line no-alert
+    /* eslint-disable no-alert */
+    const isAgree = confirm(`ID: ${id}\nReally want to destroy the template?`)
+    /* eslint-enable no-alert */
 
     if (isAgree) {
       hz.optionsTemplates.remove(this.props.template.id).subscribe(
@@ -18,10 +20,12 @@ class OptionsTemplatesListItemContainer extends Component {
     }
   }
   render() {
-    return <OptionsTemplatesListItem
-      destroyHandler={this.destroyTemplate}
-      {...this.props}
+    return (
+      <OptionsTemplatesListItem
+        destroyHandler={this.destroyTemplate}
+        {...this.props}
       />
+    )
   }
 }
 

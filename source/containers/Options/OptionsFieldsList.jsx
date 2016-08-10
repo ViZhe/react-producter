@@ -1,18 +1,15 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 
 import {OptionsFieldsList} from '~/components'
 
 
-class OptionsFieldsListContainer extends Component {
-  render() {
-    return <OptionsFieldsList
-      {...this.props}
-      />
-  }
-}
-
+const OptionsFieldsListContainer = ({options: {fields}}) => (
+  <OptionsFieldsList
+    fields={fields}
+  />
+)
 
 const mapStateToProps = state => ({
   options: {

@@ -1,18 +1,15 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 
 import {OptionsGroupsList} from '~/components'
 
 
-class OptionsGroupsListContainer extends Component {
-  render() {
-    return <OptionsGroupsList
-      {...this.props}
-      />
-  }
-}
-
+const OptionsGroupsListContainer = ({options: {groups}}) => (
+  <OptionsGroupsList
+    groups={groups}
+  />
+)
 
 const mapStateToProps = state => ({
   options: {
