@@ -7,8 +7,9 @@ const path = require('path')
 const getExternals = () => {
   const nodeModules = fs.readdirSync(path.join(process.cwd(), 'node_modules'))
   return nodeModules.reduce((ext, mod) => {
-    ext[mod] = 'commonjs ' + mod
-    return ext
+    const result = ext
+    result[mod] = `commonjs ${mod}`
+    return result
   }, {})
 }
 
