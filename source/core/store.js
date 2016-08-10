@@ -7,7 +7,7 @@ import reducers from './reducers'
 const middleware = [] // TODO: add thunk
 
 if (process.env.NODE_ENV === 'development') {
-  const createLogger = require('redux-logger')
+  const createLogger = require('redux-logger') // eslint-disable-line global-require
 
   middleware.push(createLogger())
 
@@ -21,7 +21,8 @@ export default function configureStore(initialState) {
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
-      const nextReducer = require('./reducers')
+      const nextReducer = require('./reducers') // eslint-disable-line global-require
+
       store.replaceReducer(nextReducer)
     })
   }
