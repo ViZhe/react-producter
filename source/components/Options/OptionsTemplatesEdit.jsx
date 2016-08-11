@@ -3,11 +3,11 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsTemplatesEdit = ({template, options, onSubmit, handleSubmit}) => (
+const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
   <div>
     <h2>Options Templates Edit</h2>
 
-    <form onSubmit={handleSubmit(onSubmit)} >
+    <form onSubmit={handleSubmit} >
       <div>
         <label>Название</label>
         <div>
@@ -15,7 +15,6 @@ const OptionsTemplatesEdit = ({template, options, onSubmit, handleSubmit}) => (
             component='input'
             type='text'
             name='name'
-            defaultValue={template.name}
             placeholder='Название'
           />
         </div>
@@ -27,7 +26,6 @@ const OptionsTemplatesEdit = ({template, options, onSubmit, handleSubmit}) => (
             component='input'
             type='text'
             name='title'
-            defaultValue={template.title}
             placeholder='Заголовок шаблона'
           />
         </div>
@@ -35,8 +33,8 @@ const OptionsTemplatesEdit = ({template, options, onSubmit, handleSubmit}) => (
       <div>
         <label>Группы</label>
         <div>
-          <Field component='select' multiple name='groups' defaultValue={template.groups || []} >
-            {options.groups.map((group, index) =>
+          <Field component='select' name='groups' defaultValue={[]} multiple >
+            {groups.map((group, index) =>
               <option key={index} value={group.id}>{group.title}</option>
             )}
           </Field>

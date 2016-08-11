@@ -1,8 +1,8 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {reduxForm} from 'redux-form'
 
+import {OptionsForm} from '~/containers'
 import {OptionsTemplatesEdit} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
@@ -23,16 +23,14 @@ class OptionsTemplatesEditContainer extends Component {
     )
   }
   render() {
-    const template = this.props.options.templates.find(({id}) =>
+    const initials = this.props.options.templates.find(({id}) =>
       id === this.props.params.id
     )
 
     return (
-      <OptionsTemplatesEdit
-        template={template || {}}
-        onSubmit={this.handleUpdateTemplate}
-        {...this.props}
-      />
+      <OptionsForm initialValues={initials} onSubmit={this.handleUpdateTemplate} >
+        <OptionsTemplatesEdit groups={this.props.options.groups} />
+      </OptionsForm>
     )
   }
 }
@@ -47,6 +45,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(reduxForm({
-  form: 'OptionsTemplatesEdit'
-})(OptionsTemplatesEditContainer))
+)(OptionsTemplatesEditContainer)

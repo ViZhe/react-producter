@@ -12,13 +12,6 @@ npm start
 ```
 
 ## TODO
-- [ ] update Options with OptionsForm
-  - [X] add Fields
-  - [X] edit Fields
-  - [X] add Groups
-  - [X] edit Groups
-  - [X] add Templates
-  - [ ] edit Templates
 - [ ] redo DynamicForm from defaultValie to initialValue
 - [ ] update OptionsFields
   - [ ] add validate
@@ -40,6 +33,13 @@ npm start
 - [ ] ???
 
 ## Done
+- [X] update Options with OptionsForm
+  - [X] add Fields
+  - [X] edit Fields
+  - [X] add Groups
+  - [X] edit Groups
+  - [X] add Templates
+  - [X] edit Templates
 - [X] Products
   - [X] add PrdouctsItem
   - [X] update edit
