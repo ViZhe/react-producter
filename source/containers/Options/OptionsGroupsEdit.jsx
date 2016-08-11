@@ -1,8 +1,8 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {reduxForm} from 'redux-form'
 
+import {OptionsForm} from '~/containers'
 import {OptionsGroupsEdit} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
@@ -23,16 +23,14 @@ class OptionsGroupsEditContainer extends Component {
     )
   }
   render() {
-    const group = this.props.options.groups.find(({id}) =>
+    const initials = this.props.options.groups.find(({id}) =>
       id === this.props.params.id
     )
 
     return (
-      <OptionsGroupsEdit
-        group={group || {}}
-        onSubmit={this.handleUpdateGroup}
-        {...this.props}
-      />
+      <OptionsForm initialValues={initials} onSubmit={this.handleUpdateGroup} >
+        <OptionsGroupsEdit fields={this.props.options.fields} />
+      </OptionsForm>
     )
   }
 }
@@ -47,6 +45,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(reduxForm({
-  form: 'OptionsGroupsEdit'
-})(OptionsGroupsEditContainer))
+)(OptionsGroupsEditContainer)
