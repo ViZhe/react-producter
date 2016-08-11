@@ -1,8 +1,9 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {reduxForm, reset} from 'redux-form'
+import {reset} from 'redux-form'
 
+import {OptionsForm} from '~/containers'
 import {OptionsGroupsAdd} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
@@ -22,10 +23,9 @@ class OptionsGroupsAddContainer extends Component {
   }
   render() {
     return (
-      <OptionsGroupsAdd
-        onSubmit={this.handleAddGroup}
-        {...this.props}
-      />
+      <OptionsForm onSubmit={this.handleAddGroup} >
+        <OptionsGroupsAdd fields={this.props.options.fields} />
+      </OptionsForm>
     )
   }
 }
@@ -38,12 +38,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  resetForm: () => dispatch(reset('OptionsGroupsAdd'))
+  resetForm: () => dispatch(reset('OptionsForm'))
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(reduxForm({
-  form: 'OptionsGroupsAdd'
-})(OptionsGroupsAddContainer))
+)(OptionsGroupsAddContainer)

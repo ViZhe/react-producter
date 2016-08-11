@@ -15,7 +15,7 @@ npm start
 - [ ] update Options with OptionsForm
   - [X] add Fields
   - [X] edit Fields
-  - [ ] add Groups
+  - [X] add Groups
   - [ ] edit Groups
   - [ ] add Templates
   - [ ] edit Templates

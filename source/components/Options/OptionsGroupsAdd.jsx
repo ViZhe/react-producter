@@ -3,11 +3,11 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsGroupsAdd = ({options, onSubmit, handleSubmit}) => (
+const OptionsGroupsAdd = ({fields, handleSubmit}) => (
   <div>
     <h2>Options Groups Add</h2>
 
-    <form onSubmit={handleSubmit(onSubmit)} >
+    <form onSubmit={handleSubmit} >
       <div>
         <label>Название</label>
         <div>
@@ -24,7 +24,7 @@ const OptionsGroupsAdd = ({options, onSubmit, handleSubmit}) => (
         <label>Поля</label>
         <div>
           <Field component='select' multiple name='fields' defaultValue={[]} >
-            {options.fields.map((field, index) =>
+            {fields.map((field, index) =>
               <option key={index} value={field.id}>{field.title}</option>
             )}
           </Field>
