@@ -43,7 +43,7 @@ const OptionsFieldsList = ({fields}) => {
 
 
 OptionsFieldsList.propTypes = {
-  fields: PropTypes.array // TODO: details it with PropTypes.shape
+  fields: PropTypes.array
 }
 
 export default OptionsFieldsList

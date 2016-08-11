@@ -24,7 +24,7 @@ const OptionsTemplatesListItem = ({template, destroyHandler}) => {
 
 
 OptionsTemplatesListItem.propTypes = {
-  template: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
+  template: PropTypes.object.isRequired
 }
 
 export default OptionsTemplatesListItem

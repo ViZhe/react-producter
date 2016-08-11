@@ -41,7 +41,7 @@ const OptionsTemplatesList = ({templates}) => {
 
 
 OptionsTemplatesList.propTypes = {
-  templates: PropTypes.array // TODO: details it with PropTypes.shape
+  templates: PropTypes.array
 }
 
 export default OptionsTemplatesList

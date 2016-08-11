@@ -24,7 +24,7 @@ const OptionsGroupsListItem = ({group, destroyHandler}) => {
 
 
 OptionsGroupsListItem.propTypes = {
-  group: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
+  group: PropTypes.object.isRequired
 }
 
 export default OptionsGroupsListItem

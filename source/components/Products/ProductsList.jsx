@@ -43,7 +43,7 @@ const ProductsList = ({products}) => {
 
 
 ProductsList.propTypes = {
-  products: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
+  products: PropTypes.object.isRequired
 }
 
 export default ProductsList

@@ -33,7 +33,7 @@ const ProductsListItem = ({product, toggleDeleteHandler, toggleActiveHandler, de
 
 
 ProductsListItem.propTypes = {
-  product: PropTypes.object.isRequired, // TODO: details it with PropTypes.shape
+  product: PropTypes.object.isRequired,
   toggleDeleteHandler: PropTypes.func.isRequired,
   toggleActiveHandler: PropTypes.func.isRequired,
   destroyHandler: PropTypes.func.isRequired

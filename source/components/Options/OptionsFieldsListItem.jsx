@@ -26,7 +26,7 @@ const OptionsFieldsListItem = ({field, destroyHandler}) => {
 
 
 OptionsFieldsListItem.propTypes = {
-  field: PropTypes.object.isRequired // TODO: details it with PropTypes.shape
+  field: PropTypes.object.isRequired
 }
 
 export default OptionsFieldsListItem

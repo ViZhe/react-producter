@@ -41,7 +41,7 @@ const OptionsGroupsList = ({groups}) => {
 
 
 OptionsGroupsList.propTypes = {
-  groups: PropTypes.array // TODO: details it with PropTypes.shape
+  groups: PropTypes.array
 }
 
 export default OptionsGroupsList
