@@ -13,7 +13,7 @@ npm start
 
 ## TODO
 - [ ] update Options with OptionsForm
-  - [ ] add Fields
+  - [X] add Fields
   - [ ] edit Fields
   - [ ] add Groups
   - [ ] edit Groups

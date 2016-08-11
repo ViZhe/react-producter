@@ -3,11 +3,11 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsFieldsAdd = ({onSubmit, handleSubmit}) => (
+const OptionsFieldsAdd = ({handleSubmit}) => (
   <div>
     <h2>Options Fields Add</h2>
 
-    <form onSubmit={handleSubmit(onSubmit)} >
+    <form onSubmit={handleSubmit} >
       <div>
         <label>Название</label>
         <div>
