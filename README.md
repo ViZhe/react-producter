@@ -17,7 +17,7 @@ npm start
   - [X] edit Fields
   - [X] add Groups
   - [X] edit Groups
-  - [ ] add Templates
+  - [X] add Templates
   - [ ] edit Templates
 - [ ] redo DynamicForm from defaultValie to initialValue
 - [ ] update OptionsFields
