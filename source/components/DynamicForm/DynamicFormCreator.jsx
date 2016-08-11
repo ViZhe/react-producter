@@ -29,18 +29,31 @@ class DynamicFormCreator extends Component {
       options: {templates, groups, fields},
       onSubmit, submitButtonText
     } = this.props
-    const validateList = {}
 
     const currentTemplate = templates.find(({name}) => name === template)
     const currentGroups = groups.filter(({id}) =>
       currentTemplate.groups.indexOf(id) >= 0
     )
 
-    fields.forEach(({name, validate}) => {
+    const validateList = {}
+    const initialList = {}
+    fields.forEach(({name, validate, defaultValue}) => {
       if (validate) {
         validateList[name] = validate
       }
+      if (product && product.options[name]) {
+        initialList[name] = product.options[name]
+      }
+      if (!product && defaultValue) {
+        initialList[name] = defaultValue
+      }
     })
+
+    let initialValues
+    if (Object.keys(initialList).length) {
+      initialValues = initialList
+    }
+
 
     const validate = values => {
       const errors = {}
@@ -66,44 +79,17 @@ class DynamicFormCreator extends Component {
         })
       })
 
-
-      // for (const fieldName in validateList) {
-      //   if (!{}.hasOwnProperty.call(validateList, fieldName)) {
-      //     return
-      //   }
-      //
-      //   validateList[fieldName].forEach(({type, ...valid}) => {
-      //     if (errors[fieldName]) {
-      //       return
-      //     }
-      //
-      //     if (type === 'required') {
-      //       if (!values[fieldName]) {
-      //         errors[fieldName] = valid.title
-      //       }
-      //     } else if (type === 'regex') {
-      //       const regex = new RegExp(valid.regex, 'i')
-      //       if (!regex.test(values[fieldName])) {
-      //         errors[fieldName] = valid.title
-      //       }
-      //     }
-      //
-      //     // TODO: add more validators
-      //   })
-      // }
-
       return errors
     }
 
     return (
       <DynamicForm
-        product={product}
-        template={template}
         groups={currentGroups}
         fields={fields}
-        validate={validate}
         onSubmit={onSubmit}
         submitButtonText={submitButtonText}
+        initialValues={initialValues}
+        validate={validate}
       />
     )
   }

@@ -12,7 +12,6 @@ npm start
 ```
 
 ## TODO
-- [ ] redo DynamicForm from defaultValie to initialValue
 - [ ] update OptionsFields
   - [ ] add validate
   - [ ] add normalize
@@ -33,6 +32,7 @@ npm start
 - [ ] ???
 
 ## Done
+- [X] redo DynamicForm from defaultValie to initialValue
 - [X] update Options with OptionsForm
   - [X] add Fields
   - [X] edit Fields
