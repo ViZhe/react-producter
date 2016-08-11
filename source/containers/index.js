@@ -10,6 +10,7 @@ export ProductsListItem from './Products/ProductsListItem'
 
 
 export Options from './Options/Options'
+export OptionsForm from './Options/OptionsForm'
 
 export OptionsFieldsAdd from './Options/OptionsFieldsAdd'
 export OptionsFieldsEdit from './Options/OptionsFieldsEdit'

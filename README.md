@@ -12,6 +12,14 @@ npm start
 ```
 
 ## TODO
+- [ ] update Options with OptionsForm
+  - [ ] add Fields
+  - [ ] edit Fields
+  - [ ] add Groups
+  - [ ] edit Groups
+  - [ ] add Templates
+  - [ ] edit Templates
+- [ ] redo DynamicForm from defaultValie to initialValue
 - [ ] update OptionsFields
   - [ ] add validate
   - [ ] add normalize
