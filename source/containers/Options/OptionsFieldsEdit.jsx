@@ -1,8 +1,8 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {reduxForm} from 'redux-form'
 
+import {OptionsForm} from '~/containers'
 import {OptionsFieldsEdit} from '~/components'
 import * as hz from '~/utils/horizon/helpers'
 
@@ -23,16 +23,14 @@ class OptionsFieldsEditContainer extends Component {
     )
   }
   render() {
-    const field = this.props.options.fields.find(({id}) =>
+    const initials = this.props.options.fields.find(({id}) =>
       id === this.props.params.id
     )
 
     return (
-      <OptionsFieldsEdit
-        field={field || {}}
-        onSubmit={this.handleUpdateField}
-        {...this.props}
-      />
+      <OptionsForm initialValues={initials} onSubmit={this.handleUpdateField} >
+        <OptionsFieldsEdit />
+      </OptionsForm>
     )
   }
 }
@@ -46,6 +44,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(reduxForm({
-  form: 'OptionsFieldsEdit'
-})(OptionsFieldsEditContainer))
+)(OptionsFieldsEditContainer)

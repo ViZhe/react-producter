@@ -3,45 +3,27 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsFieldsEdit = ({field, onSubmit, handleSubmit}) => (
+const OptionsFieldsEdit = ({handleSubmit}) => (
   <div>
     <h2>Options Fields Edit</h2>
 
-    <form onSubmit={handleSubmit(onSubmit)} >
+    <form onSubmit={handleSubmit} >
       <div>
         <label>Название</label>
         <div>
-          <Field
-            component='input'
-            type='text'
-            name='name'
-            defaultValue={field.name}
-            placeholder='Название'
-          />
+          <Field component='input' type='text' name='name' placeholder='Название' />
         </div>
       </div>
       <div>
         <label>Тип поля</label>
         <div>
-          <Field
-            component='input'
-            type='text'
-            name='type'
-            defaultValue={field.type}
-            placeholder='Тип поля'
-          />
+          <Field component='input' type='text' name='type' placeholder='Тип поля' />
         </div>
       </div>
       <div>
         <label>Заголовок поля</label>
         <div>
-          <Field
-            component='input'
-            type='text'
-            name='title'
-            defaultValue={field.title}
-            placeholder='Заголовок поля'
-          />
+          <Field component='input' type='text' name='title' placeholder='Заголовок поля' />
         </div>
       </div>
       <div>
@@ -51,7 +33,6 @@ const OptionsFieldsEdit = ({field, onSubmit, handleSubmit}) => (
             component='input'
             type='text'
             name='defaultValue'
-            defaultValue={field.defaultValue}
             placeholder='Значение по умолчанию'
           />
         </div>
@@ -59,12 +40,7 @@ const OptionsFieldsEdit = ({field, onSubmit, handleSubmit}) => (
       <div>
         <label>Заполнитель</label>
         <div>
-          <Field
-            component='input'
-            type='text'
-            name='placeholder'
-            placeholder='Заполнитель'
-          />
+          <Field component='input' type='text' name='placeholder' placeholder='Заполнитель' />
         </div>
       </div>
       <div>

@@ -14,7 +14,7 @@ npm start
 ## TODO
 - [ ] update Options with OptionsForm
   - [X] add Fields
-  - [ ] edit Fields
+  - [X] edit Fields
   - [ ] add Groups
   - [ ] edit Groups
   - [ ] add Templates
