@@ -24,8 +24,11 @@ const OptionsFieldsAdd = ({validateList, handleSubmit}) => (
       <div>
         <label>Тип поля</label>
         <div>
-          {/* TODO: change to select */}
-          <Field component='input' type='text' name='type' placeholder='Тип поля' />
+          <Field name='type' component='select' >
+            <option value='' >Select a type...</option>
+            <option value='text' >text</option>
+            <option value='textarea' >textarea</option>
+          </Field>
         </div>
       </div>
       <div>
