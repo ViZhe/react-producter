@@ -14,7 +14,10 @@ npm start
 ## TODO
 - [ ] update OptionsFields
   - [ ] add validate
+    - [X] add field
+    - [ ] edit field
   - [ ] add normalize
+- [ ] update DynamicFormCreator for new validate format
 - [ ] Remove hz.store && hz.remove && hz.update in reducer
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
@@ -32,7 +35,7 @@ npm start
 - [ ] ???
 
 ## Done
-- [X] redo DynamicForm from defaultValie to initialValue
+- [X] redo DynamicForm from defaultValue to initialValue
 - [X] update Options with OptionsForm
   - [X] add Fields
   - [X] edit Fields

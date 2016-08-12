@@ -3,7 +3,14 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsFieldsAdd = ({handleSubmit}) => (
+const renderField = ({meta: {touched, error}, input, ...rest}) => (
+  <div>
+    <input {...rest} {...input} />
+    {touched && error && <span>{error}</span>}
+  </div>
+)
+
+const OptionsFieldsAdd = ({validateList, handleSubmit}) => (
   <div>
     <h2>Options Fields Add</h2>
 
@@ -11,12 +18,13 @@ const OptionsFieldsAdd = ({handleSubmit}) => (
       <div>
         <label>Название</label>
         <div>
-          <Field component='input' type='text' name='name' placeholder='Название' />
+          <Field component={renderField} type='text' name='name' placeholder='Название' />
         </div>
       </div>
       <div>
         <label>Тип поля</label>
         <div>
+          {/* TODO: change to select */}
           <Field component='input' type='text' name='type' placeholder='Тип поля' />
         </div>
       </div>
@@ -43,7 +51,33 @@ const OptionsFieldsAdd = ({handleSubmit}) => (
           <Field component='input' type='text' name='placeholder' placeholder='Заполнитель' />
         </div>
       </div>
-      {/* TODO: add validate */}
+      <div><b>Валидаторы</b></div>
+      <div>
+      {validateList.map((name, index) =>
+        <div key={index}>
+          <label>{name}</label>
+          <div>
+            <Field
+              name={`validate.${name}.isActive`}
+              type='checkbox'
+              component={renderField}
+            />
+            <Field
+              name={`validate.${name}.title`}
+              type='text'
+              component={renderField}
+              placeholder='title'
+            />
+            {name === 'regex' && <Field
+              name={`validate.${name}.regex`}
+              type='text'
+              component={renderField}
+              placeholder='regex'
+            />}
+          </div>
+        </div>
+      )}
+      </div>
       <div>
         <button type='submit' >Создать поле</button>
       </div>
