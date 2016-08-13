@@ -12,7 +12,7 @@ import * as hz from '~/utils/horizon/helpers'
 
 
 class DynamicFormCreator extends Component {
-  componentDidMount() {
+  componentWillMount() {
     hz.optionsTemplates.watch().subscribe(response => {
       this.props.dispatch(loadOptionsTemplates(response))
     })
@@ -30,23 +30,30 @@ class DynamicFormCreator extends Component {
       onSubmit, submitButtonText
     } = this.props
 
+    console.log('groups', groups)
+    console.log('template', template)
+
     const currentTemplate = templates.find(({name}) => name === template)
+    console.log('currentTemplate', currentTemplate)
     const currentGroups = groups.filter(({id}) =>
       currentTemplate.groups.indexOf(id) >= 0
     )
 
     const validateList = {}
     const initialList = {}
-    fields.forEach(({name, validate, defaultValue}) => {
-      if (validate) {
-        validateList[name] = validate
-      }
-      if (product && product.options[name]) {
-        initialList[name] = product.options[name]
-      }
-      if (!product && defaultValue) {
-        initialList[name] = defaultValue
-      }
+    currentGroups.forEach(group => {
+      fields.filter(({id}) => group.fields.indexOf(id) >= 0)
+        .forEach(({name, validate, defaultValue}) => {
+          if (validate) {
+            validateList[name] = validate
+          }
+          if (product && product.options[name]) {
+            initialList[name] = product.options[name]
+          }
+          if (!product && defaultValue) {
+            initialList[name] = defaultValue
+          }
+        })
     })
 
     let initialValues
@@ -59,24 +66,24 @@ class DynamicFormCreator extends Component {
       const errors = {}
 
       Object.keys(validateList).forEach(key => {
-        validateList[key].forEach(({type, ...valid}) => {
-          if (errors[key]) {
-            return
+        if (errors[key]) {
+          return
+        }
+        const valRegex = validateList[key].regex
+        const valRequired = validateList[key].required
+        if (valRegex && valRegex.isActive) {
+          const regex = new RegExp(valRegex.regex, 'i')
+          if (!regex.test(values[key])) {
+            errors[key] = valRegex.title
           }
-
-          if (type === 'required') {
-            if (!values[key]) {
-              errors[key] = valid.title
-            }
-          } else if (type === 'regex') {
-            const regex = new RegExp(valid.regex, 'i')
-            if (!regex.test(values[key])) {
-              errors[key] = valid.title
-            }
+        }
+        if (valRequired && valRequired.isActive) {
+          if (!values[key]) {
+            errors[key] = valRequired.title
           }
+        }
 
-          // TODO: add more validators
-        })
+        // TODO: add more validators
       })
 
       return errors
