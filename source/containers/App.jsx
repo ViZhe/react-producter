@@ -36,7 +36,7 @@ const App = ({children}) => (
       </li>
       <li><Link to='/products' activeClassName='active' >Products</Link>
         <ul>
-          <li><Link to='/product/add' activeClassName='active' >Products Add</Link></li>
+          <li><Link to='/products/add' activeClassName='active' >Products Add</Link></li>
         </ul>
       </li>
     </ul>

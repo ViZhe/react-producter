@@ -1,18 +1,11 @@
 
 import React from 'react'
 
-import {
-  ProductsAdd,
-  ProductsList
-} from '~/containers'
 
-
-const Products = () => (
+const Products = ({children}) => (
   <div>
     <h2>Products</h2>
-
-    <ProductsAdd />
-    <ProductsList />
+    {children}
   </div>
 )
 

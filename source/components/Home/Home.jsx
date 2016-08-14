@@ -2,17 +2,20 @@
 import React from 'react'
 
 import {
-  ProductsAdd,
-  ProductsList
+  Products
 } from '~/containers'
+import {
+  ProductsIndex
+} from '~/components'
 
 
 const Home = () => (
   <div>
     <h2>Home</h2>
 
-    <ProductsAdd />
-    <ProductsList />
+    <Products>
+      <ProductsIndex />
+    </Products>
   </div>
 )
 

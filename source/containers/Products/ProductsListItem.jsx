@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 
 import {ProductsListItem} from '~/components'
-import * as hz from '~/utils/horizon/helpers'
+import * as hz from '~/api/horizon/helpers'
 
 
 class ProductsListItemContainer extends Component {

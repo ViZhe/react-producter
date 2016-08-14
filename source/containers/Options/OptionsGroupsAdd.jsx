@@ -5,7 +5,7 @@ import {reset} from 'redux-form'
 
 import {OptionsForm} from '~/containers'
 import {OptionsGroupsAdd} from '~/components'
-import * as hz from '~/utils/horizon/helpers'
+import * as hz from '~/api/horizon/helpers'
 
 
 class OptionsGroupsAddContainer extends Component {

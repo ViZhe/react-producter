@@ -15,7 +15,7 @@ const ProductsListItem = ({product, toggleDeleteHandler, toggleActiveHandler, de
       <td style={tdStyle} >{id}</td>
       <td style={tdStyle} >{product.options && product.options.name}</td>
       <td style={tdStyle} >{product.template}</td>
-      <td style={tdStyle} ><Link to={`/product/${id}/edit`} >edit</Link></td>
+      <td style={tdStyle} ><Link to={`/products/${id}/edit`} >edit</Link></td>
       <td style={tdStyle} >
         <button onClick={toggleDeleteHandler} >
           {product.isDeleted ? 'restore' : 'detele'}

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import {OptionsForm} from '~/containers'
 import {OptionsTemplatesEdit} from '~/components'
-import * as hz from '~/utils/horizon/helpers'
+import * as hz from '~/api/horizon/helpers'
 
 
 class OptionsTemplatesEditContainer extends Component {

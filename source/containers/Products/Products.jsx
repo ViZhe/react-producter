@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import {Options} from '~/components'
+import {Products} from '~/components'
 import {
   loadOptionsTemplates,
   loadOptionsGroups,
@@ -11,7 +11,7 @@ import {
 import * as hz from '~/api/horizon/helpers'
 
 
-class OptionsContainer extends Component {
+class ProductsContainer extends Component {
   componentWillMount() {
     hz.optionsTemplates.watch().subscribe(response => {
       this.props.dispatch(loadOptionsTemplates(response))
@@ -25,7 +25,7 @@ class OptionsContainer extends Component {
   }
   render() {
     return (
-      <Options
+      <Products
         {...this.props}
       />
     )
@@ -39,4 +39,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(OptionsContainer)
+)(ProductsContainer)

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import {ProductsEdit} from '~/components'
 import {loadProducts} from '~/core/products/actions'
-import * as hz from '~/utils/horizon/helpers'
+import * as hz from '~/api/horizon/helpers'
 
 
 class ProductsEditContainer extends Component {
