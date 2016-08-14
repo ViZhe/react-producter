@@ -5,6 +5,7 @@ import {reset} from 'redux-form'
 
 import {OptionsForm} from '~/containers'
 import {OptionsFieldsAdd} from '~/components'
+import createValidate from '~/utils/options/validationFields'
 import * as hz from '~/api/horizon/helpers'
 
 
@@ -21,41 +22,10 @@ class OptionsFieldsAddContainer extends Component {
       () => this.props.resetForm()
     )
   }
-  validateForm = values => {
-    const errors = {
-      validate: {
-        required: {},
-        regex: {}
-      }
-    }
-
-    if (!values.name) {
-      errors.name = 'Required'
-    }
-    const validate = values.validate
-    if (validate) {
-      const required = validate.required
-      if (required) {
-        if (required.isActive && !required.title) {
-          errors.validate.required.title = 'Required'
-        }
-      }
-      const regex = validate.regex
-      if (regex) {
-        if (regex.isActive && !regex.title) {
-          errors.validate.regex.title = 'Required'
-        }
-        if (regex.isActive && !regex.regex) {
-          errors.validate.regex.regex = 'Required'
-        }
-      }
-    }
-
-    return errors
-  }
   render() {
+    const validate = values => createValidate(values)
     return (
-      <OptionsForm onSubmit={this.handleAddField} validate={this.validateForm} >
+      <OptionsForm onSubmit={this.handleAddField} validate={validate} >
         <OptionsFieldsAdd
           validateList={['required', 'regex']}
         />

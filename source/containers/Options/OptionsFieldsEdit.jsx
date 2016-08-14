@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 
 import {OptionsForm} from '~/containers'
 import {OptionsFieldsEdit} from '~/components'
+import createValidate from '~/utils/options/validationFields'
 import * as hz from '~/api/horizon/helpers'
 
 
@@ -23,12 +24,17 @@ class OptionsFieldsEditContainer extends Component {
     )
   }
   render() {
+    const validate = values => createValidate(values)
     const initials = this.props.options.fields.find(({id}) =>
       id === this.props.params.id
     )
 
     return (
-      <OptionsForm initialValues={initials} onSubmit={this.handleUpdateField} >
+      <OptionsForm
+        validate={validate}
+        initialValues={initials}
+        onSubmit={this.handleUpdateField}
+      >
         <OptionsFieldsEdit />
       </OptionsForm>
     )
