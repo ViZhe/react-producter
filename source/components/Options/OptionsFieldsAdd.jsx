@@ -34,14 +34,14 @@ const OptionsFieldsAdd = ({validateList, handleSubmit}) => (
       <div>
         <label>Заголовок поля</label>
         <div>
-          <Field component='input' type='text' name='title' placeholder='Заголовок поля' />
+          <Field component={renderField} type='text' name='title' placeholder='Заголовок поля' />
         </div>
       </div>
       <div>
         <label>Значение по умолчанию</label>
         <div>
           <Field
-            component='input'
+            component={renderField}
             type='text'
             name='defaultValue'
             placeholder='Значение по умолчанию'
@@ -51,35 +51,35 @@ const OptionsFieldsAdd = ({validateList, handleSubmit}) => (
       <div>
         <label>Заполнитель</label>
         <div>
-          <Field component='input' type='text' name='placeholder' placeholder='Заполнитель' />
+          <Field component={renderField} type='text' name='placeholder' placeholder='Заполнитель' />
         </div>
       </div>
-      <div><b>Валидаторы</b></div>
       <div>
-      {validateList.map((name, index) =>
-        <div key={index}>
-          <label>{name}</label>
-          <div>
-            <Field
-              name={`validate.${name}.isActive`}
-              type='checkbox'
-              component={renderField}
-            />
-            <Field
-              name={`validate.${name}.title`}
-              type='text'
-              component={renderField}
-              placeholder='title'
-            />
-            {name === 'regex' && <Field
-              name={`validate.${name}.regex`}
-              type='text'
-              component={renderField}
-              placeholder='regex'
-            />}
+        <div><b>Валидаторы</b></div>
+        {validateList.map((name, index) =>
+          <div key={index}>
+            <label>{name}</label>
+            <div>
+              <Field
+                name={`validate.${name}.isActive`}
+                type='checkbox'
+                component={renderField}
+              />
+              <Field
+                name={`validate.${name}.title`}
+                type='text'
+                component={renderField}
+                placeholder='title'
+              />
+              {name === 'regex' && <Field
+                name={`validate.${name}.regex`}
+                type='text'
+                component={renderField}
+                placeholder='regex'
+              />}
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </div>
       <div>
         <button type='submit' >Создать поле</button>

@@ -35,7 +35,9 @@ class OptionsFieldsEditContainer extends Component {
         initialValues={initials}
         onSubmit={this.handleUpdateField}
       >
-        <OptionsFieldsEdit />
+        <OptionsFieldsEdit
+          validateList={['required', 'regex']}
+        />
       </OptionsForm>
     )
   }

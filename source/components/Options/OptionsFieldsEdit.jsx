@@ -3,7 +3,14 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
-const OptionsFieldsEdit = ({handleSubmit}) => (
+const renderField = ({meta: {touched, error}, input, ...rest}) => (
+  <div>
+    <input {...rest} {...input} />
+    {touched && error && <span>{error}</span>}
+  </div>
+)
+
+const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
   <div>
     <h2>Options Fields Edit</h2>
 
@@ -11,26 +18,30 @@ const OptionsFieldsEdit = ({handleSubmit}) => (
       <div>
         <label>Название</label>
         <div>
-          <Field component='input' type='text' name='name' placeholder='Название' />
+          <Field component={renderField} type='text' name='name' placeholder='Название' />
         </div>
       </div>
       <div>
         <label>Тип поля</label>
         <div>
-          <Field component='input' type='text' name='type' placeholder='Тип поля' />
+          <Field name='type' component='select' >
+            <option value='' >Select a type...</option>
+            <option value='text' >text</option>
+            <option value='textarea' >textarea</option>
+          </Field>
         </div>
       </div>
       <div>
         <label>Заголовок поля</label>
         <div>
-          <Field component='input' type='text' name='title' placeholder='Заголовок поля' />
+          <Field component={renderField} type='text' name='title' placeholder='Заголовок поля' />
         </div>
       </div>
       <div>
         <label>Значение по умолчанию</label>
         <div>
           <Field
-            component='input'
+            component={renderField}
             type='text'
             name='defaultValue'
             placeholder='Значение по умолчанию'
@@ -40,8 +51,35 @@ const OptionsFieldsEdit = ({handleSubmit}) => (
       <div>
         <label>Заполнитель</label>
         <div>
-          <Field component='input' type='text' name='placeholder' placeholder='Заполнитель' />
+          <Field component={renderField} type='text' name='placeholder' placeholder='Заполнитель' />
         </div>
+      </div>
+      <div>
+        <div><b>Валидаторы</b></div>
+        {validateList.map((name, index) =>
+          <div key={index}>
+            <label>{name}</label>
+            <div>
+              <Field
+                name={`validate.${name}.isActive`}
+                type='checkbox'
+                component={renderField}
+              />
+              <Field
+                name={`validate.${name}.title`}
+                type='text'
+                component={renderField}
+                placeholder='title'
+              />
+              {name === 'regex' && <Field
+                name={`validate.${name}.regex`}
+                type='text'
+                component={renderField}
+                placeholder='regex'
+              />}
+            </div>
+          </div>
+        )}
       </div>
       <div>
         <button type='submit' >Обновить поле</button>
