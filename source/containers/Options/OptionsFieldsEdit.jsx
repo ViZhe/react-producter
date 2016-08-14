@@ -31,8 +31,8 @@ class OptionsFieldsEditContainer extends Component {
 
     return (
       <OptionsForm
-        validate={validate}
         initialValues={initials}
+        validate={validate}
         onSubmit={this.handleUpdateField}
       >
         <OptionsFieldsEdit

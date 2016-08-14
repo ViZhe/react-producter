@@ -5,6 +5,7 @@ import {reset} from 'redux-form'
 
 import {OptionsForm} from '~/containers'
 import {OptionsTemplatesAdd} from '~/components'
+import createValidate from '~/utils/options/validationTemplates'
 import * as hz from '~/api/horizon/helpers'
 
 
@@ -22,8 +23,13 @@ class OptionsTemplatesAddContainer extends Component {
     )
   }
   render() {
+    const validate = values => createValidate(values)
+
     return (
-      <OptionsForm onSubmit={this.handleAddTemplate} >
+      <OptionsForm
+        validate={validate}
+        onSubmit={this.handleAddTemplate}
+      >
         <OptionsTemplatesAdd groups={this.props.options.groups} />
       </OptionsForm>
     )

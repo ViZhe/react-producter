@@ -25,9 +25,9 @@ npm start
     - [X] edit group
   - [ ] add normalize
 - [ ] update OptionsTemplates
-  - [ ] add validate
-    - [ ] add template
-    - [ ] edit template
+  - [X] add validate
+    - [X] add template
+    - [X] edit template
   - [ ] add normalize
 - [ ] update DynamicFormCreator for new validate format
 - [ ] Remove hz.store && hz.remove && hz.update in reducer

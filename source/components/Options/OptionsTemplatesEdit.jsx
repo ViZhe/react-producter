@@ -3,6 +3,13 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
+const renderField = ({meta: {touched, error}, input, ...rest}) => (
+  <div>
+    <input {...rest} {...input} />
+    {touched && error && <span>{error}</span>}
+  </div>
+)
+
 const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
   <div>
     <h2>Options Templates Edit</h2>
@@ -12,7 +19,7 @@ const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
         <label>Название</label>
         <div>
           <Field
-            component='input'
+            component={renderField}
             type='text'
             name='name'
             placeholder='Название'
@@ -23,7 +30,7 @@ const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
         <label>Заголовок шаблона</label>
         <div>
           <Field
-            component='input'
+            component={renderField}
             type='text'
             name='title'
             placeholder='Заголовок шаблона'
