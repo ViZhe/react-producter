@@ -13,9 +13,5 @@ const ProductsFormContainer = ({children, onSubmit, handleSubmit}) => (
 
 export default connect()(reduxForm({
   form: 'ProductsForm',
-  enableReinitialize: true,
-  destroyOnUnmount: false,
-  registeredFields: [
-    {name: 'price', type: 'Field'}
-  ]
+  enableReinitialize: true
 })(ProductsFormContainer))
