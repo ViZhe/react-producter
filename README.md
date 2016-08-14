@@ -12,10 +12,11 @@ npm start
 ```
 
 ## TODO
+- [ ] Add render component for Field select
 - [ ] update OptionsFields
-  - [ ] add validate
+  - [X] add validate
     - [X] add field
-    - [ ] edit field
+    - [X] edit field
   - [ ] add normalize
 - [ ] update OptionsGroups
   - [ ] add validate
