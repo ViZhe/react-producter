@@ -12,6 +12,7 @@ npm start
 ```
 
 ## TODO
+- [ ] Add Form/FormRenderInput && Form/FormRenderSelect
 - [ ] Add render component for Field select
 - [ ] update OptionsFields
   - [X] add validate
@@ -19,9 +20,9 @@ npm start
     - [X] edit field
   - [ ] add normalize
 - [ ] update OptionsGroups
-  - [ ] add validate
-    - [ ] add group
-    - [ ] edit group
+  - [X] add validate
+    - [X] add group
+    - [X] edit group
   - [ ] add normalize
 - [ ] update OptionsTemplates
   - [ ] add validate

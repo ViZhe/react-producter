@@ -5,6 +5,7 @@ import {reset} from 'redux-form'
 
 import {OptionsForm} from '~/containers'
 import {OptionsGroupsAdd} from '~/components'
+import createValidate from '~/utils/options/validationGroups'
 import * as hz from '~/api/horizon/helpers'
 
 
@@ -22,8 +23,13 @@ class OptionsGroupsAddContainer extends Component {
     )
   }
   render() {
+    const validate = values => createValidate(values)
+
     return (
-      <OptionsForm onSubmit={this.handleAddGroup} >
+      <OptionsForm
+        validate={validate}
+        onSubmit={this.handleAddGroup}
+      >
         <OptionsGroupsAdd fields={this.props.options.fields} />
       </OptionsForm>
     )

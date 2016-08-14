@@ -6,9 +6,10 @@ const createValidate = values => {
       regex: {}
     }
   }
+
   // TODO:
   // name: only latin symbols
-  // all: lenght? 20?
+  // all: length? 20?
   if (!values.name) {
     errors.name = 'Required'
   }

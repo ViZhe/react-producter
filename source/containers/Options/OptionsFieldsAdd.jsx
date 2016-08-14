@@ -24,6 +24,7 @@ class OptionsFieldsAddContainer extends Component {
   }
   render() {
     const validate = values => createValidate(values)
+
     return (
       <OptionsForm onSubmit={this.handleAddField} validate={validate} >
         <OptionsFieldsAdd

@@ -3,6 +3,13 @@ import React from 'react'
 import {Field} from 'redux-form'
 
 
+const renderField = ({meta: {touched, error}, input, ...rest}) => (
+  <div>
+    <input {...rest} {...input} />
+    {touched && error && <span>{error}</span>}
+  </div>
+)
+
 const OptionsGroupsAdd = ({fields, handleSubmit}) => (
   <div>
     <h2>Options Groups Add</h2>
@@ -11,19 +18,19 @@ const OptionsGroupsAdd = ({fields, handleSubmit}) => (
       <div>
         <label>Название</label>
         <div>
-          <Field component='input' type='text' name='name' placeholder='Название' />
+          <Field component={renderField} type='text' name='name' placeholder='Название' />
         </div>
       </div>
       <div>
         <label>Заголовок группы</label>
         <div>
-          <Field component='input' type='text' name='title' placeholder='Заголовок группы' />
+          <Field component={renderField} type='text' name='title' placeholder='Заголовок группы' />
         </div>
       </div>
       <div>
         <label>Поля</label>
         <div>
-          <Field component='select' multiple name='fields' defaultValue={[]} >
+          <Field component='select' name='fields' defaultValue={[]} multiple >
             {fields.map((field, index) =>
               <option key={index} value={field.id}>{field.title}</option>
             )}
