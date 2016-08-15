@@ -15,8 +15,8 @@ const ProductsList = ({products}) => {
       product={product}
     />
   )
-  const productsEmpty = <tr><td colSpan={7}>Товаров нет</td></tr>
-  const productsLoading = <tr><td colSpan={7}>Товары загружаются</td></tr>
+  const productsEmpty = <tr><td colSpan='7' >Товаров нет</td></tr>
+  const productsLoading = <tr><td colSpan='7' >Товары загружаются</td></tr>
 
   return (
     <div className='c-products-list' >

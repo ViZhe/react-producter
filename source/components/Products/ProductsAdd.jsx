@@ -5,13 +5,13 @@ import {FormField} from '~/components'
 
 
 const ProductsAdd = ({
-    groups, fields, handleSubmit, submitButtonText, templates, selectTemplateHandler
+    groups, fields, handleSubmit, textSubmitButton, templates, handleSelectTemplate
   }) => (
   <div>
     <h2>Add Product</h2>
 
     <p><b>Select template:</b></p>
-    <select onChange={selectTemplateHandler}>
+    <select onChange={handleSelectTemplate}>
       {templates.map(({name, title}, index) =>
         <option key={index} value={name}>{title}</option>
       )}
@@ -38,7 +38,7 @@ const ProductsAdd = ({
           )}
         </div>
       ))}
-      <button>{submitButtonText}</button>
+      <button>{textSubmitButton}</button>
     </form>
   </div>
 )

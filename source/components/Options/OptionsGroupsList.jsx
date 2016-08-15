@@ -15,7 +15,7 @@ const OptionsGroupsList = ({groups}) => {
       group={group}
     />
   )
-  const optionsGroupsEmpty = <tr><td colSpan={7}>Полей нет</td></tr>
+  const optionsGroupsEmpty = <tr><td colSpan='6' >Полей нет</td></tr>
 
   return (
     <div>

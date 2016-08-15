@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 
 
-const ProductsListItem = ({product, toggleDeleteHandler, toggleActiveHandler, destroyHandler}) => {
+const ProductsListItem = ({product, handleToggleDelete, handleToggleActive, handleDestroy}) => {
   let tdStyle = {
     border: '1px solid gray'
   }
@@ -17,16 +17,16 @@ const ProductsListItem = ({product, toggleDeleteHandler, toggleActiveHandler, de
       <td style={tdStyle} >{product.template}</td>
       <td style={tdStyle} ><Link to={`/products/${id}/edit`} >edit</Link></td>
       <td style={tdStyle} >
-        <button onClick={toggleDeleteHandler} >
+        <button onClick={handleToggleDelete} >
           {product.isDeleted ? 'restore' : 'detele'}
         </button>
       </td>
       <td style={tdStyle} >
-        <button onClick={toggleActiveHandler} >
+        <button onClick={handleToggleActive} >
           {product.isActivated ? 'deactivate' : 'activate'}
         </button>
       </td>
-      <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
+      <td style={tdStyle} ><button onClick={handleDestroy} >destroy</button></td>
     </tr>
   )
 }
@@ -34,9 +34,9 @@ const ProductsListItem = ({product, toggleDeleteHandler, toggleActiveHandler, de
 
 ProductsListItem.propTypes = {
   product: PropTypes.object.isRequired,
-  toggleDeleteHandler: PropTypes.func.isRequired,
-  toggleActiveHandler: PropTypes.func.isRequired,
-  destroyHandler: PropTypes.func.isRequired
+  handleToggleDelete: PropTypes.func.isRequired,
+  handleToggleActive: PropTypes.func.isRequired,
+  handleDestroy: PropTypes.func.isRequired
 }
 
 export default ProductsListItem

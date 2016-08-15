@@ -6,7 +6,7 @@ import * as hz from '~/api/horizon/helpers'
 
 
 class OptionsFieldsListItemContainer extends Component {
-  destroyField = () => {
+  handleDestroy = () => {
     const id = this.props.field.id
     /* eslint-disable no-alert */
     const isAgree = confirm(`ID: ${id}\nReally want to destroy the field?`)
@@ -22,7 +22,7 @@ class OptionsFieldsListItemContainer extends Component {
   render() {
     return (
       <OptionsFieldsListItem
-        destroyHandler={this.destroyField}
+        handleDestroy={this.handleDestroy}
         {...this.props}
       />
     )

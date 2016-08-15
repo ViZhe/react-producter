@@ -15,7 +15,7 @@ const OptionsTemplatesList = ({templates}) => {
       template={template}
     />
   )
-  const optionsTemplatesEmpty = <tr><td colSpan={7}>Шаблонов нет</td></tr>
+  const optionsTemplatesEmpty = <tr><td colSpan='6' >Шаблонов нет</td></tr>
 
   return (
     <div>

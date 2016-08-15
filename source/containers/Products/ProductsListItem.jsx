@@ -20,15 +20,15 @@ class ProductsListItemContainer extends Component {
       err => console.error('Update Fail', err)
     )
   }
-  toggleDeleteProduct = () => {
+  handleToggleDelete = () => {
     const product = this.props.product
     this.updateProductField(product.id, 'isDeleted', !product.isDeleted)
   }
-  toggleActiveProduct = () => {
+  handleToggleActive = () => {
     const product = this.props.product
     this.updateProductField(product.id, 'isActivated', !product.isActivated)
   }
-  destroyProduct = () => {
+  handleDestroy = () => {
     const id = this.props.product.id
     /* eslint-disable no-alert */
     const isAgree = confirm(`ID: ${id}\nReally want to destroy the product?`)
@@ -44,9 +44,9 @@ class ProductsListItemContainer extends Component {
   render() {
     return (
       <ProductsListItem
-        toggleDeleteHandler={this.toggleDeleteProduct}
-        toggleActiveHandler={this.toggleActiveProduct}
-        destroyHandler={this.destroyProduct}
+        handleToggleDelete={this.handleToggleDelete}
+        handleToggleActive={this.handleToggleActive}
+        handleDestroy={this.handleDestroy}
         {...this.props}
       />
     )

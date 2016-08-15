@@ -12,7 +12,7 @@ class ProductsAddContainer extends Component {
   componentWillMount() {
     this.setState({currentTemplate: 'defaultTemplate'})
   }
-  selectTemplate = event => {
+  handleSelectTemplate = event => {
     this.setState({currentTemplate: event.target.value})
   }
   handleAddProduct = data => {
@@ -73,11 +73,11 @@ class ProductsAddContainer extends Component {
         onSubmit={this.handleAddProduct}
       >
         <ProductsAdd
-          selectTemplateHandler={this.selectTemplate}
+          handleSelectTemplate={this.handleSelectTemplate}
           templates={templates}
           fields={fields}
           groups={currentGroups}
-          submitButtonText='Создать товар'
+          textSubmitButton='Создать товар'
         />
       </ProductsForm>
     )

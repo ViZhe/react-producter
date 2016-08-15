@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 
 
-const OptionsFieldsListItem = ({field, destroyHandler}) => {
+const OptionsFieldsListItem = ({field, handleDestroy}) => {
   let tdStyle = {
     border: '1px solid gray'
   }
@@ -19,7 +19,7 @@ const OptionsFieldsListItem = ({field, destroyHandler}) => {
       <td style={tdStyle} >{field.defaultValue}</td>
       <td style={tdStyle} >{field.placeholder}</td>
       <td style={tdStyle} ><Link to={`/options/field/${id}`} >edit</Link></td>
-      <td style={tdStyle} ><button onClick={destroyHandler} >destroy</button></td>
+      <td style={tdStyle} ><button onClick={handleDestroy} >destroy</button></td>
     </tr>
   )
 }
