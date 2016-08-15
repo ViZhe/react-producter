@@ -2,7 +2,10 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
-import {FormRenderInput} from '~/components'
+import {
+  FormRenderInput,
+  FormRenderSelect
+} from '~/components'
 
 
 const OptionsGroupsAdd = ({fields, handleSubmit}) => (
@@ -24,16 +27,19 @@ const OptionsGroupsAdd = ({fields, handleSubmit}) => (
         name='title'
         placeholder='Заголовок группы'
       />
-      <div>
-        <label>Поля</label>
-        <div>
-          <Field component='select' name='fields' defaultValue={[]} multiple >
-            {fields.map((field, index) =>
-              <option key={index} value={field.id}>{field.title}</option>
-            )}
-          </Field>
-        </div>
-      </div>
+      <Field
+        component={FormRenderSelect}
+        title='Поля'
+        type='text'
+        name='fields'
+        placeholder='Поля'
+        defaultValue={[]}
+        multiple
+      >
+        {fields.map((field, index) =>
+          <option key={index} value={field.id}>{field.title}</option>
+        )}
+      </Field>
       <div>
         <button type='submit' >Создать группу</button>
       </div>
