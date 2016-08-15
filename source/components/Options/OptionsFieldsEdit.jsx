@@ -2,10 +2,7 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
-import {
-  FormRenderInput,
-  FormRenderSelect
-} from '~/components'
+import {FormRenderAuto} from '~/components'
 
 
 const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
@@ -14,16 +11,16 @@ const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
 
     <form onSubmit={handleSubmit} >
       <Field
-        component={FormRenderInput}
+        component={FormRenderAuto}
         title='Название'
         type='text'
         name='name'
         placeholder='Название'
       />
       <Field
-        component={FormRenderSelect}
+        component={FormRenderAuto}
         title='Тип поля'
-        type='text'
+        type='select'
         name='type'
         placeholder='Тип поля'
       >
@@ -32,21 +29,21 @@ const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
         <option value='textarea' >textarea</option>
       </Field>
       <Field
-        component={FormRenderInput}
+        component={FormRenderAuto}
         title='Заголовок поля'
         type='text'
         name='title'
         placeholder='Заголовок поля'
       />
       <Field
-        component={FormRenderInput}
+        component={FormRenderAuto}
         title='Значение по умолчанию'
         type='text'
         name='defaultValue'
         placeholder='Значение по умолчанию'
       />
       <Field
-        component={FormRenderInput}
+        component={FormRenderAuto}
         title='Заполнитель'
         type='text'
         name='placeholder'
@@ -59,13 +56,13 @@ const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
             <div>{index}) <b>{name}</b></div>
             <div>
               <Field
-                component={FormRenderInput}
+                component={FormRenderAuto}
                 title='Активный'
                 type='checkbox'
                 name={`validate.${name}.isActive`}
               />
               <Field
-                component={FormRenderInput}
+                component={FormRenderAuto}
                 title='Текст ошибки'
                 type='text'
                 name={`validate.${name}.title`}
@@ -73,7 +70,7 @@ const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
               />
               {name === 'regex' &&
                 <Field
-                  component={FormRenderInput}
+                  component={FormRenderAuto}
                   title='Регулярное выражение'
                   type='text'
                   name={`validate.${name}.regex`}
