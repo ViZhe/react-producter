@@ -12,8 +12,8 @@ npm start
 ```
 
 ## TODO
-- [ ] Add Form/FormRenderInput && Form/FormRenderSelect
-- [ ] Add render component for Field select
+- [X] Add Form/FormRenderInput && Form/FormRenderSelect
+- [X] Add render component for Field select
 - [ ] update OptionsFields
   - [X] add validate
     - [X] add field
