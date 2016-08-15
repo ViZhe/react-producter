@@ -2,10 +2,7 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
-import {
-  FormRenderInput,
-  FormRenderSelect
-} from '~/components'
+import {FormRenderAuto} from '~/components'
 
 
 const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
@@ -14,23 +11,23 @@ const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
 
     <form onSubmit={handleSubmit} >
       <Field
-        component={FormRenderInput}
+        component={FormRenderAuto}
         title='Название'
         type='text'
         name='name'
         placeholder='Название'
       />
       <Field
-        component={FormRenderInput}
+        component={FormRenderAuto}
         title='Заголовок шаблона'
         type='text'
         name='title'
         placeholder='Заголовок шаблона'
       />
       <Field
-        component={FormRenderSelect}
+        component={FormRenderAuto}
         title='Группы'
-        type='text'
+        type='select'
         name='groups'
         placeholder='Группы'
         defaultValue={[]}
