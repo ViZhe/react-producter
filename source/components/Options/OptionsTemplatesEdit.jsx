@@ -2,7 +2,10 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
-import {FormRenderInput} from '~/components'
+import {
+  FormRenderInput,
+  FormRenderSelect
+} from '~/components'
 
 
 const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
@@ -24,16 +27,19 @@ const OptionsTemplatesEdit = ({groups, handleSubmit}) => (
         name='title'
         placeholder='Заголовок шаблона'
       />
-      <div>
-        <label>Группы</label>
-        <div>
-          <Field component='select' name='groups' defaultValue={[]} multiple >
-            {groups.map((group, index) =>
-              <option key={index} value={group.id}>{group.title}</option>
-            )}
-          </Field>
-        </div>
-      </div>
+      <Field
+        component={FormRenderSelect}
+        title='Группы'
+        type='text'
+        name='groups'
+        placeholder='Группы'
+        defaultValue={[]}
+        multiple
+      >
+        {groups.map((group, index) =>
+          <option key={index} value={group.id}>{group.title}</option>
+        )}
+      </Field>
       <div>
         <button type='submit' >Обновить шаблон</button>
       </div>
