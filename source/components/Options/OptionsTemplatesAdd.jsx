@@ -2,31 +2,28 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
+import {FormRenderInput} from '~/components'
 
-const renderField = ({meta: {touched, error}, input, ...rest}) => (
-  <div>
-    <input {...rest} {...input} />
-    {touched && error && <span>{error}</span>}
-  </div>
-)
 
 const OptionsTemplatesAdd = ({groups, handleSubmit}) => (
   <div>
     <h2>Options Templates Add</h2>
 
     <form onSubmit={handleSubmit} >
-      <div>
-        <label>Название</label>
-        <div>
-          <Field component={renderField} type='text' name='name' placeholder='Название' />
-        </div>
-      </div>
-      <div>
-        <label>Заголовок шаблона</label>
-        <div>
-          <Field component={renderField} type='text' name='title' placeholder='Заголовок шаблона' />
-        </div>
-      </div>
+      <Field
+        component={FormRenderInput}
+        title='Название'
+        type='text'
+        name='name'
+        placeholder='Название'
+      />
+      <Field
+        component={FormRenderInput}
+        title='Заголовок шаблона'
+        type='text'
+        name='title'
+        placeholder='Заголовок шаблона'
+      />
       <div>
         <label>Группы</label>
         <div>
