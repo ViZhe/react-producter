@@ -1,8 +1,7 @@
 
 import React from 'react'
-import {Field} from 'redux-form'
 
-import {FormRenderAuto} from '~/components'
+import {FormField} from '~/components'
 
 
 const OptionsGroupsEdit = ({fields, handleSubmit}) => (
@@ -10,22 +9,19 @@ const OptionsGroupsEdit = ({fields, handleSubmit}) => (
     <h2>Options Groups Edit</h2>
 
     <form onSubmit={handleSubmit} >
-      <Field
-        component={FormRenderAuto}
+      <FormField
         title='Название'
         type='text'
         name='name'
         placeholder='Название'
       />
-      <Field
-        component={FormRenderAuto}
+      <FormField
         title='Заголовок группы'
         type='text'
         name='title'
         placeholder='Заголовок группы'
       />
-      <Field
-        component={FormRenderAuto}
+      <FormField
         title='Поля'
         type='select'
         name='fields'
@@ -36,7 +32,7 @@ const OptionsGroupsEdit = ({fields, handleSubmit}) => (
         {fields.map((field, index) =>
           <option key={index} value={field.id}>{field.title}</option>
         )}
-      </Field>
+      </FormField>
       <div>
         <button type='submit' >Обновить группу</button>
       </div>
