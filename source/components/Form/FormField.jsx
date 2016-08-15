@@ -1,10 +1,11 @@
 
 import React from 'react'
+import {Field} from 'redux-form'
 
-import FormRenderInput from './FormRenderInput'
 import FormRenderSelect from './FormRenderSelect'
+import FormRenderInput from './FormRenderInput'
 
-const FormRenderAuto = ({type, ...data}) => {
+const FormField = ({type, ...data}) => {
   let output
 
   switch (type) {
@@ -15,14 +16,17 @@ const FormRenderAuto = ({type, ...data}) => {
     //   output = <Field component={renderFieldRadio} {...field} />
     //   break
     case 'select':
-      output = <FormRenderSelect {...data} />
+      output = <Field component={FormRenderSelect} {...data} />
       break
+    // case 'textarea':
+    //   output = <Field component={FormRenderTextArea} {...data} />
+    //   break
     default:
-      output = <FormRenderInput type={type} {...data} />
+      output = <Field component={FormRenderInput} type={type} {...data} />
   }
 
   return output
 }
 
 
-export default FormRenderAuto
+export default FormField
