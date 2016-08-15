@@ -2,8 +2,7 @@
 export Home from './Home/Home'
 
 
-export FormRenderInput from './Form/FormRenderInput'
-export FormRenderSelect from './Form/FormRenderSelect'
+export FormRenderAuto from './Form/FormRenderAuto'
 
 
 export DynamicFormCreator from './DynamicForm/DynamicFormCreator'
