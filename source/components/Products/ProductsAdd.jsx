@@ -1,13 +1,13 @@
 
 import React from 'react'
 
-import DynamicFieldAuto from '../DynamicForm/DynamicFieldAuto'
+import {FormField} from '~/components'
 
 
 const ProductsAdd = ({
     groups, fields, handleSubmit, submitButtonText, templates, selectTemplateHandler
   }) => (
-  <div className='c-area-list'>
+  <div>
     <h2>Add Product</h2>
 
     <p>Select template:</p>
@@ -20,17 +20,17 @@ const ProductsAdd = ({
     <p>Create product:</p>
     <form onSubmit={handleSubmit} >
       {groups.map((group, groupIndex) => (
-        <div key={groupIndex} className='b-dynamic-form__group' >
-          <div className='b-dynamic-form__header' >{group.title} - ({group.fields.length})</div>
+        <div key={groupIndex} >
+          <div>{group.title} - ({group.fields.length})</div>
 
           {fields.filter(field => group.fields.indexOf(field.id) >= 0)
             .sort((a, b) => a.title > b.title) // TODO: ability to change the order
             .map(({type, name, title, placeholder}, fieldIndex) => (
-              <DynamicFieldAuto // TODO: create new component
+              <FormField
                 key={fieldIndex}
+                title={title}
                 type={type}
                 name={name}
-                title={title}
                 placeholder={placeholder}
                 // normalize={value => value.toUpperCase()}
               />
@@ -38,13 +38,8 @@ const ProductsAdd = ({
           )}
         </div>
       ))}
-      <button>{submitButtonText || 'Отправить'}</button>
+      <button>{submitButtonText}</button>
     </form>
-    {/* <DynamicFormCreator
-      template={template}
-      onSubmit={addProductHandler}
-      submitButtonText='Создать товар'
-    /> */}
   </div>
 )
 

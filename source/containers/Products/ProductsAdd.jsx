@@ -90,7 +90,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  resetForm: () => dispatch(reset('dynamicForm'))
+  resetForm: () => dispatch(reset('ProductsForm'))
 })
 
 export default connect(
