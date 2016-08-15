@@ -2,25 +2,21 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
+import {FormRenderInput} from '~/components'
 
-const renderField = ({meta: {touched, error}, input, ...rest}) => (
-  <div>
-    <input {...rest} {...input} />
-    {touched && error && <span>{error}</span>}
-  </div>
-)
 
 const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
   <div>
     <h2>Options Fields Edit</h2>
 
     <form onSubmit={handleSubmit} >
-      <div>
-        <label>Название</label>
-        <div>
-          <Field component={renderField} type='text' name='name' placeholder='Название' />
-        </div>
-      </div>
+      <Field
+        component={FormRenderInput}
+        title='Название'
+        type='text'
+        name='name'
+        placeholder='Название'
+      />
       <div>
         <label>Тип поля</label>
         <div>
@@ -31,52 +27,55 @@ const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
           </Field>
         </div>
       </div>
-      <div>
-        <label>Заголовок поля</label>
-        <div>
-          <Field component={renderField} type='text' name='title' placeholder='Заголовок поля' />
-        </div>
-      </div>
-      <div>
-        <label>Значение по умолчанию</label>
-        <div>
-          <Field
-            component={renderField}
-            type='text'
-            name='defaultValue'
-            placeholder='Значение по умолчанию'
-          />
-        </div>
-      </div>
-      <div>
-        <label>Заполнитель</label>
-        <div>
-          <Field component={renderField} type='text' name='placeholder' placeholder='Заполнитель' />
-        </div>
-      </div>
+      <Field
+        component={FormRenderInput}
+        title='Заголовок поля'
+        type='text'
+        name='title'
+        placeholder='Заголовок поля'
+      />
+      <Field
+        component={FormRenderInput}
+        title='Значение по умолчанию'
+        type='text'
+        name='defaultValue'
+        placeholder='Значение по умолчанию'
+      />
+      <Field
+        component={FormRenderInput}
+        title='Заполнитель'
+        type='text'
+        name='placeholder'
+        placeholder='Заполнитель'
+      />
       <div>
         <div><b>Валидаторы</b></div>
         {validateList.map((name, index) =>
-          <div key={index}>
-            <label>{name}</label>
+          <div key={index} style={{border: '1px solid'}} >
+            <div>{index}) <b>{name}</b></div>
             <div>
               <Field
-                name={`validate.${name}.isActive`}
+                component={FormRenderInput}
+                title='Активный'
                 type='checkbox'
-                component={renderField}
+                name={`validate.${name}.isActive`}
               />
               <Field
+                component={FormRenderInput}
+                title='Текст ошибки'
+                type='text'
                 name={`validate.${name}.title`}
-                type='text'
-                component={renderField}
-                placeholder='title'
+                placeholder='Текст ошибки'
               />
-              {name === 'regex' && <Field
-                name={`validate.${name}.regex`}
-                type='text'
-                component={renderField}
-                placeholder='regex'
-              />}
+              {name === 'regex' &&
+                <Field
+                  component={FormRenderInput}
+                  title='Регулярное выражение'
+                  type='text'
+                  name={`validate.${name}.regex`}
+                  placeholder='/^[0-9]$/'
+                />
+              }
             </div>
           </div>
         )}
