@@ -2,7 +2,10 @@
 import React from 'react'
 import {Field} from 'redux-form'
 
-import {FormRenderInput} from '~/components'
+import {
+  FormRenderInput,
+  FormRenderSelect
+} from '~/components'
 
 
 const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
@@ -17,16 +20,17 @@ const OptionsFieldsEdit = ({validateList, handleSubmit}) => (
         name='name'
         placeholder='Название'
       />
-      <div>
-        <label>Тип поля</label>
-        <div>
-          <Field name='type' component='select' >
-            <option value='' >Select a type...</option>
-            <option value='text' >text</option>
-            <option value='textarea' >textarea</option>
-          </Field>
-        </div>
-      </div>
+      <Field
+        component={FormRenderSelect}
+        title='Тип поля'
+        type='text'
+        name='type'
+        placeholder='Тип поля'
+      >
+        <option value='' >Select a type...</option>
+        <option value='text' >text</option>
+        <option value='textarea' >textarea</option>
+      </Field>
       <Field
         component={FormRenderInput}
         title='Заголовок поля'
