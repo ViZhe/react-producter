@@ -36,8 +36,8 @@ class ProductsListItemContainer extends Component {
 
     if (isAgree) {
       hz.products.remove(this.props.product.id).subscribe(
-        res => console.info(`Type: Product Destroy\nID: "${res.id}"`),
-        err => console.error('Destroy Fail', err)
+        res => console.info(`Destroy - Product - Success\nID: "${res.id}"`),
+        err => console.error(`Destroy - Product - Fail: ${err}`)
       )
     }
   }

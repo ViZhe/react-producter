@@ -17,7 +17,7 @@ class OptionsFieldsAddContainer extends Component {
     }
 
     hz.optionsFields.store(data).subscribe(
-      res => console.info(`Create - Field - Success\nID: "${res.id}".`),
+      res => console.info(`Create - Field - Success\nID: "${res.id}"`),
       err => console.error(`Create - Field - Fail: ${err}`),
       () => this.props.resetForm()
     )

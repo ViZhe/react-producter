@@ -18,7 +18,7 @@ class OptionsGroupsEditContainer extends Component {
 
     hz.optionsGroups.update(data).subscribe(
       res => {
-        console.info(`Update - Group - Success\nID: "${res.id}".`)
+        console.info(`Update - Group - Success\nID: "${res.id}"`)
         browserHistory.replace(
           this.props.location.pathname.replace(/[^\/]+$/, data.name)
         )

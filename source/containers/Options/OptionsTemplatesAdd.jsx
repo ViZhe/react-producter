@@ -17,7 +17,7 @@ class OptionsTemplatesAddContainer extends Component {
     }
 
     hz.optionsTemplates.store(data).subscribe(
-      res => console.info(`Create - Template - Success\nID: "${res.id}".`),
+      res => console.info(`Create - Template - Success\nID: "${res.id}"`),
       err => console.error(`Create - Template - Fail: ${err}`),
       () => this.props.resetForm()
     )

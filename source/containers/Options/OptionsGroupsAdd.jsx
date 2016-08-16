@@ -17,7 +17,7 @@ class OptionsGroupsAddContainer extends Component {
     }
 
     hz.optionsGroups.store(data).subscribe(
-      res => console.info(`Create - Group - Success\nID: "${res.id}".`),
+      res => console.info(`Create - Group - Success\nID: "${res.id}"`),
       err => console.error(`Create - Group - Fail: ${err}`),
       () => this.props.resetForm()
     )
