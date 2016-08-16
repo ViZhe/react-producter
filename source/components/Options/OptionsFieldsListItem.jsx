@@ -8,17 +8,17 @@ const OptionsFieldsListItem = ({field, handleDestroy}) => {
     border: '1px solid gray'
   }
 
-  const id = field.id
+  const name = field.name
 
   return (
     <tr>
-      <td style={tdStyle} >{id}</td>
-      <td style={tdStyle} >{field.name}</td>
+      <td style={tdStyle} >{field.id}</td>
+      <td style={tdStyle} >{name}</td>
       <td style={tdStyle} >{field.title}</td>
       <td style={tdStyle} >{field.type}</td>
       <td style={tdStyle} >{field.defaultValue}</td>
       <td style={tdStyle} >{field.placeholder}</td>
-      <td style={tdStyle} ><Link to={`/options/field/${id}`} >edit</Link></td>
+      <td style={tdStyle} ><Link to={`/options/field/${name}`} >edit</Link></td>
       <td style={tdStyle} ><button onClick={handleDestroy} >destroy</button></td>
     </tr>
   )

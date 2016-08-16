@@ -35,7 +35,7 @@ const routes = (
         <Redirect from='field' to='fields' />
         <Route path='field' >
           <Route path='add' component={OptionsFieldsAdd} />
-          <Route path=':id' >
+          <Route path=':name' >
             <IndexRoute component={OptionsFieldsEdit} />
           </Route>
         </Route>
@@ -68,7 +68,9 @@ const routes = (
         </Route>
       </Route>
     </Route>
-    <Route path='*' component={Home} /> {/* NotFound */}
+    <Route path='*' component={App} > {/* NotFound */}
+      <IndexRoute component={Home} />
+    </Route>
   </div>
 )
 
