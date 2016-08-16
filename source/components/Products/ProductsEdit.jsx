@@ -1,24 +1,43 @@
 
 import React from 'react'
 
-import {DynamicFormCreator} from '~/components'
+import {FormField} from '~/components'
 
 
-const ProductsEdit = ({isLoading, product, updateProductHandler}) => (
-  <div>
-    <h2>Edit Product</h2>
+const ProductsEdit = ({isLoading, groups, fields, handleSubmit, textSubmitButton}) => {
+  const empty = <div>Данные загружаются</div>
+  const form = (
+    <form onSubmit={handleSubmit} >
+      {groups.map((group, groupIndex) => (
+        <div key={groupIndex} >
+          <div>{groupIndex}) <b>{group.title} - ({group.fields.length})</b></div>
 
-    {!isLoading ? (
-      <DynamicFormCreator
-        product={product}
-        template={product.template}
-        onSubmit={updateProductHandler}
-        submitButtonText='Обновить товар'
-      />
-    ) : 'Данные загружаются'}
-  </div>
+          {fields.filter(field => group.fields.indexOf(field.id) >= 0)
+            .sort((a, b) => a.title > b.title) // TODO: ability to change the order
+            .map(({type, name, title, placeholder}, fieldIndex) => (
+              <FormField
+                key={fieldIndex}
+                title={title}
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                // normalize={value => value.toUpperCase()}
+              />
+            )
+          )}
+        </div>
+      ))}
+      <button>{textSubmitButton}</button>
+    </form>
+  )
 
-)
+  return (
+    <div>
+      <h2>Product Edit</h2>
+      {isLoading ? empty : form}
+    </div>
+  )
+}
 
 
 export default ProductsEdit

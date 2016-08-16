@@ -12,8 +12,6 @@ npm start
 ```
 
 ## TODO
-- [X] Add Form/FormRenderInput && Form/FormRenderSelect
-- [X] Add render component for Field select
 - [ ] update OptionsFields
   - [X] add validate
     - [X] add field
@@ -29,7 +27,6 @@ npm start
     - [X] add template
     - [X] edit template
   - [ ] add normalize
-- [ ] update DynamicFormCreator for new validate format
 - [ ] Remove hz.store && hz.remove && hz.update in reducer
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS
@@ -47,6 +44,10 @@ npm start
 - [ ] ???
 
 ## Done
+- [X] rewrite ProductsEdit like ProductsAdd
+- [X] Add Form/FormRenderInput && Form/FormRenderSelect
+- [X] Add render component for Field select
+- [X] update DynamicFormCreator for new validate format
 - [X] redo DynamicForm from defaultValue to initialValue
 - [X] update Options with OptionsForm
   - [X] add Fields

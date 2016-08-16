@@ -1,19 +1,16 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {reset} from 'redux-form'
 
+import {ProductsForm} from '~/containers'
 import {ProductsEdit} from '~/components'
-import {loadProducts} from '~/core/products/actions'
+import createValidate from '~/utils/products/validation'
 import * as hz from '~/api/horizon/helpers'
 
 
 class ProductsEditContainer extends Component {
-  componentDidMount() {
-    hz.products.watch().subscribe(response => {
-      this.props.loadProducts(response)
-    })
-  }
-  updateProduct = data => {
+  handleUpdateProduct = data => {
     if (!Object.keys(data).length) {
       console.info('handleUpdateProduct: No change')
       return
@@ -29,26 +26,61 @@ class ProductsEditContainer extends Component {
     )
   }
   render() {
-    const {products} = this.props
+    const {products, options: {templates, groups, fields}} = this.props
     const product = products.data.find(({id}) => id === this.props.params.id)
 
+    const currentTemplate = templates.find(({name}) => name === product.template)
+    const currentGroups = groups.filter(({id}) =>
+      currentTemplate.groups.indexOf(id) >= 0
+    )
+    console.log('currentGroups', currentGroups)
+
+    const validateList = {}
+    const initialList = {}
+    currentGroups.forEach(group => {
+      fields.filter(({id}) => group.fields.indexOf(id) >= 0)
+        .forEach(({name, validate}) => {
+          if (validate) {
+            validateList[name] = validate
+          }
+          if (product && product.options[name]) {
+            initialList[name] = product.options[name]
+          }
+        })
+    })
+
+    let initialValues
+    if (Object.keys(initialList).length) {
+      initialValues = initialList
+    }
+
+    const validate = values => createValidate(validateList, values)
+
     return (
-      <ProductsEdit
-        isLoading={products.isLoading}
-        product={product}
-        updateProductHandler={this.updateProduct}
-      />
+      <ProductsForm
+        initialValues={initialValues}
+        validate={validate}
+        onSubmit={this.handleUpdateProduct}
+      >
+        <ProductsEdit
+          isLoading={products.isLoading}
+          fields={fields}
+          groups={currentGroups}
+          textSubmitButton='Обновить товар'
+        />
+      </ProductsForm>
     )
   }
 }
 
 
 const mapStateToProps = state => ({
-  products: state.products.toJS()
+  products: state.products.toJS(),
+  options: state.options.toJS()
 })
 
 const mapDispatchToProps = dispatch => ({
-  loadProducts: data => dispatch(loadProducts(data))
+  resetForm: () => dispatch(reset('ProductsForm'))
 })
 
 export default connect(

@@ -8,7 +8,7 @@ const ProductsAdd = ({
     groups, fields, handleSubmit, textSubmitButton, templates, handleSelectTemplate
   }) => (
   <div>
-    <h2>Add Product</h2>
+    <h2>Product Add</h2>
 
     <p><b>Select template:</b></p>
     <select onChange={handleSelectTemplate}>

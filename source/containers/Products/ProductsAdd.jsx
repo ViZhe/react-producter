@@ -6,6 +6,7 @@ import {reset} from 'redux-form'
 import {ProductsForm} from '~/containers'
 import {ProductsAdd} from '~/components'
 import createValidate from '~/utils/products/validation'
+// import * as hz from '~/api/horizon/helpers'
 
 
 class ProductsAddContainer extends Component {
@@ -40,7 +41,6 @@ class ProductsAddContainer extends Component {
     const {options: {templates, groups, fields}} = this.props
 
     const currentTemplate = templates.find(({name}) => name === this.state.currentTemplate)
-    console.log('currentTemplate', currentTemplate)
     const currentGroups = groups.filter(({id}) =>
       currentTemplate.groups.indexOf(id) >= 0
     )
