@@ -12,6 +12,9 @@ npm start
 ```
 
 ## TODO
+- [ ] update transliteration
+  - [ ] add option replaceSpace: '' or '-'
+  - [ ] add more chars & symbols in dictionary
 - [ ] update OptionsFields
   - [X] add validate
     - [X] add field

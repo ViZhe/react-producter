@@ -1,8 +1,17 @@
 
+import transliteration from './transliteration'
+
+
 const createNormalize = normalizes => (
   value => { // (value, previousValue, allValues)
     let result = value
     normalizes.forEach(({name, ...rest}) => {
+      if (name === 'translit') {
+        result = transliteration(result)
+      }
+      // if (name === 'replace') {
+      //   result = result.replace(rest.from, rest.to)
+      // }
       if (name === 'lower') {
         result = result.toLowerCase()
       }
