@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {browserHistory} from 'react-router'
 
 import {OptionsForm} from '~/containers'
 import {OptionsGroupsEdit} from '~/components'
@@ -15,18 +16,20 @@ class OptionsGroupsEditContainer extends Component {
       return
     }
 
-    hz.optionsGroups.update({
-      ...data,
-      id: this.props.params.id
-    }).subscribe(
-      res => console.info(`Update - Group - Success\nID: "${res.id}".`),
+    hz.optionsGroups.update(data).subscribe(
+      res => {
+        console.info(`Update - Group - Success\nID: "${res.id}".`)
+        browserHistory.replace(
+          this.props.location.pathname.replace(/[^\/]+$/, data.name)
+        )
+      },
       err => console.error(`Update - Group - Fail: ${err}`)
     )
   }
   render() {
     const validate = values => createValidate(values)
-    const initials = this.props.options.groups.find(({id}) =>
-      id === this.props.params.id
+    const initials = this.props.options.groups.find(({name}) =>
+      name === this.props.params.name
     )
 
     return (

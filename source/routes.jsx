@@ -44,7 +44,7 @@ const routes = (
         <Redirect from='group' to='groups' />
         <Route path='group' >
           <Route path='add' component={OptionsGroupsAdd} />
-          <Route path=':id' >
+          <Route path=':name' >
             <IndexRoute component={OptionsGroupsEdit} />
           </Route>
         </Route>
