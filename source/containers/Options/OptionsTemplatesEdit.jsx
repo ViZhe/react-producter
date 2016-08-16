@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {browserHistory} from 'react-router'
 
 import {OptionsForm} from '~/containers'
 import {OptionsTemplatesEdit} from '~/components'
@@ -15,18 +16,20 @@ class OptionsTemplatesEditContainer extends Component {
       return
     }
 
-    hz.optionsTemplates.update({
-      ...data,
-      id: this.props.params.id
-    }).subscribe(
-      res => console.info(`Update - Template - Success\nID: "${res.id}".`),
+    hz.optionsTemplates.update(data).subscribe(
+      res => {
+        console.info(`Update - Template - Success\nID: "${res.id}"`)
+        browserHistory.replace(
+          this.props.location.pathname.replace(/[^\/]+$/, data.name)
+        )
+      },
       err => console.error(`Update - Template - Fail: ${err}`)
     )
   }
   render() {
     const validate = values => createValidate(values)
-    const initials = this.props.options.templates.find(({id}) =>
-      id === this.props.params.id
+    const initials = this.props.options.templates.find(({name}) =>
+      name === this.props.params.name
     )
 
     return (

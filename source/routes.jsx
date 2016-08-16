@@ -53,7 +53,7 @@ const routes = (
         <Redirect from='template' to='templates' />
         <Route path='template' >
           <Route path='add' component={OptionsTemplatesAdd} />
-          <Route path=':id' >
+          <Route path=':name' >
             <IndexRoute component={OptionsTemplatesEdit} />
           </Route>
         </Route>
