@@ -35,11 +35,13 @@ const characters = {
   я: 'ya'
 }
 
-const translit = text => {
+const translit = (text, replaceSpace) => {
   let result = ''
   for (let i = 0; i < text.length; i++) {
     if ({}.hasOwnProperty.call(characters, text[i])) {
       result += characters[text[i]]
+    } else if (replaceSpace !== undefined && text[i] === ' ') {
+      result += replaceSpace
     } else {
       result += text[i]
     }

@@ -16,7 +16,7 @@ const OptionsFieldsAdd = ({validateList, handleSubmit}) => (
         name='name'
         placeholder='Название'
         normalize={createNormalize([
-          {name: 'translit'},
+          {name: 'translit', replaceSpace: ''},
           {name: 'lower'},
           {name: 'maxLength', num: 20}
         ])}

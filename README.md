@@ -13,23 +13,23 @@ npm start
 
 ## TODO
 - [ ] update transliteration
-  - [ ] add option replaceSpace: '' or '-'
+  - [X] add option replaceSpace: '' or '-'
   - [ ] add more chars & symbols in dictionary
 - [ ] update OptionsFields
   - [X] add validate
     - [X] add field
     - [X] edit field
-  - [ ] add normalize
+  - [X] add normalize
 - [ ] update OptionsGroups
   - [X] add validate
     - [X] add group
     - [X] edit group
-  - [ ] add normalize
+  - [X] add normalize
 - [ ] update OptionsTemplates
   - [X] add validate
     - [X] add template
     - [X] edit template
-  - [ ] add normalize
+  - [X] add normalize
 - [ ] Remove hz.store && hz.remove && hz.update in reducer
 - [ ] Styles
   - [ ] Stylus || PostCSS + SugarSS

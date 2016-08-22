@@ -9,11 +9,6 @@ const createValidate = values => {
 
   if (!values.name) {
     errors.name = 'Required'
-  } else {
-    const regex = new RegExp('^[a-z]+$', 'i')
-    if (!regex.test(values.name)) {
-      errors.name = 'Must be: a-z'
-    }
   }
   if (!values.type) {
     errors.type = 'Required'

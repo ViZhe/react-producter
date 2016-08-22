@@ -7,7 +7,7 @@ const createNormalize = normalizes => (
     let result = value
     normalizes.forEach(({name, ...rest}) => {
       if (name === 'translit') {
-        result = transliteration(result)
+        result = transliteration(result, rest.replaceSpace)
       }
       // if (name === 'replace') {
       //   result = result.replace(rest.from, rest.to)

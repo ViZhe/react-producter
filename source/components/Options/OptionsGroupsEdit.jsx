@@ -2,6 +2,7 @@
 import React from 'react'
 
 import {FormField} from '~/components'
+import createNormalize from '~/utils/normalize'
 
 
 const OptionsGroupsEdit = ({fields, handleSubmit}) => (
@@ -14,6 +15,11 @@ const OptionsGroupsEdit = ({fields, handleSubmit}) => (
         type='text'
         name='name'
         placeholder='Название'
+        normalize={createNormalize([
+          {name: 'translit', replaceSpace: ''},
+          {name: 'lower'},
+          {name: 'maxLength', num: 20}
+        ])}
       />
       <FormField
         title='Заголовок группы'
