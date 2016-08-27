@@ -4,7 +4,7 @@ import React, {PropTypes} from 'react'
 import {ProductListItem} from '~/containers'
 
 
-const ProductsList = ({products}) => {
+const ProductList = ({products}) => {
   let tableStyle = {
     border: '1px solid black'
   }
@@ -42,8 +42,8 @@ const ProductsList = ({products}) => {
 }
 
 
-ProductsList.propTypes = {
+ProductList.propTypes = {
   products: PropTypes.object.isRequired
 }
 
-export default ProductsList
+export default ProductList
