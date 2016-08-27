@@ -9,6 +9,10 @@ import {
   OptionsGroupsAdd, OptionsGroupsEdit,
   OptionsTemplatesAdd, OptionsTemplatesEdit,
   Product,
+  ProductAdd,
+  ProductEdit,
+  ProductItem,
+  ProductList,
   Products,
   ProductsAdd,
   ProductsEdit,
@@ -17,6 +21,7 @@ import {
 import {
   App,
   Home,
+  ProductIndex,
   OptionsIndex,
   OptionsFields,
   OptionsGroups,
@@ -30,8 +35,15 @@ const routes = (
     <Route path='/' component={App} >
       <IndexRoute component={Home} />
 
-      <Route path='product' component={Product} />
-      {/* </Route> */}
+      <Route path='product' component={Product} >
+        <IndexRoute component={ProductIndex} />
+        <Route path='add' component={ProductAdd} />
+        <Route path='list' component={ProductList} />
+        <Route path=':id' >
+          <IndexRoute component={ProductItem} />
+          <Route path='edit' component={ProductEdit} />
+        </Route>
+      </Route>
     </Route>
 
     <Route path='/' component={AppOld} >
