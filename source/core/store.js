@@ -1,10 +1,11 @@
 
 import {createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
 
-const middleware = [] // TODO: add thunk
+const middleware = [thunk]
 
 if (process.env.NODE_ENV === 'development') {
   const createLogger = require('redux-logger') // eslint-disable-line global-require
