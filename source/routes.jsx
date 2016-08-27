@@ -41,8 +41,6 @@ const routes = (
       </Route>
 
 
-      <IndexRoute component={Home} />
-
       <Route path='options' component={Options} >
         <IndexRoute component={OptionsIndex} />
 
