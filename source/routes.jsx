@@ -3,7 +3,6 @@ import React from 'react'
 import {Route, IndexRoute, Redirect} from 'react-router'
 
 import {
-  AppOld,
   Options,
   OptionsFieldsAdd, OptionsFieldsEdit,
   OptionsGroupsAdd, OptionsGroupsEdit,
@@ -45,9 +44,8 @@ const routes = (
           <Route path='edit' component={ProductEdit} />
         </Route>
       </Route>
-    </Route>
 
-    <Route path='/' component={AppOld} >
+
       <IndexRoute component={Home} />
 
       <Route path='options' component={Options} >

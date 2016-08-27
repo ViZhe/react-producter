@@ -1,7 +1,4 @@
 
-export AppOld from './App'
-
-
 export Product from './Product'
 export ProductAdd from './Product/Add'
 export ProductEdit from './Product/Edit'
