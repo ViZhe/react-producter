@@ -3,17 +3,19 @@ import React from 'react'
 import {Route, IndexRoute, Redirect} from 'react-router'
 
 import {
-  App,
+  AppOld,
   Options,
   OptionsFieldsAdd, OptionsFieldsEdit,
   OptionsGroupsAdd, OptionsGroupsEdit,
   OptionsTemplatesAdd, OptionsTemplatesEdit,
+  Product,
   Products,
   ProductsAdd,
   ProductsEdit,
   ProductsItem
 } from '~/containers'
 import {
+  App,
   Home,
   OptionsIndex,
   OptionsFields,
@@ -26,6 +28,13 @@ import {
 const routes = (
   <div>
     <Route path='/' component={App} >
+      <IndexRoute component={Home} />
+
+      <Route path='product' component={Product} />
+      {/* </Route> */}
+    </Route>
+
+    <Route path='/' component={AppOld} >
       <IndexRoute component={Home} />
 
       <Route path='options' component={Options} >
