@@ -8,9 +8,9 @@ export FormField from './Form/FormField'
 
 export Product from './Product'
 export ProductIndex from './Product/Index'
-export ProductItem from './Product/Item'
 export ProductAdd from './Product/Add'
 export ProductEdit from './Product/Edit'
+export ProductItem from './Product/Item'
 export ProductList from './Product/List'
 export ProductListItem from './Product/List/Item'
 
