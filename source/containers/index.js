@@ -5,6 +5,8 @@ export AppOld from './App'
 export Product from './Product'
 export ProductAdd from './Product/Add'
 export ProductEdit from './Product/Edit'
+export ProductForm from './Product/Form'
+export ProductItem from './Product/Item'
 export ProductList from './Product/List'
 export ProductListItem from './Product/List/Item'
 
