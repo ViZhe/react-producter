@@ -1,6 +1,6 @@
 
 export App from './App'
-export Home from './Home/Home'
+export Home from './Home'
 
 
 export FormField from './Form/FormField'
