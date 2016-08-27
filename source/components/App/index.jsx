@@ -10,8 +10,8 @@ const App = ({children}) => (
       <li><Link to='/' activeClassName='active' onlyActiveOnIndex >Home</Link></li>
       <li><Link to='/product' activeClassName='active' >Product</Link>
         <ul>
-          <li><Link to='/products/add' activeClassName='active' >Product Add</Link></li>
-          <li><Link to='/products/list' activeClassName='active' >Product List</Link></li>
+          <li><Link to='/product/add' activeClassName='active' >Product Add</Link></li>
+          <li><Link to='/product/list' activeClassName='active' >Product List</Link></li>
         </ul>
       </li>
     </ul>
