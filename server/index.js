@@ -8,6 +8,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from '../webpack/webpack.config.client.development'
 
 import {configDb} from './config.rethinkdb'
+import api from './api'
 
 
 const server = new Express()
@@ -30,6 +31,9 @@ server.use(webpackDevMiddleware(compiler, {
 }))
 server.use(webpackHotMiddleware(compiler))
 
+
+server.use('/api/0.0.1/', api)
+
 server.get('*', (req, res) => {
   res.status(200).send(`
     <!DOCTYPE html>
@@ -49,6 +53,7 @@ server.get('*', (req, res) => {
     </html>
   `)
 })
+
 
 const httpServer = server.listen(port, host, () =>
   console.info(`
