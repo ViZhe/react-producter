@@ -22,6 +22,7 @@ import {
   App,
   Home,
   ProductIndex,
+  NotFound,
   OptionsIndex,
   OptionsFields,
   OptionsGroups,
@@ -89,8 +90,8 @@ const routes = (
         </Route>
       </Route>
     </Route>
-    <Route path='*' component={App} > {/* NotFound */}
-      <IndexRoute component={Home} />
+    <Route path='*' component={App} >
+      <IndexRoute component={NotFound} />
     </Route>
   </div>
 )
