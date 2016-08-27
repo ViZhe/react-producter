@@ -1,8 +1,22 @@
 
+export App from './App'
 export Home from './Home/Home'
 
 
 export FormField from './Form/FormField'
+
+
+export Product from './Product'
+export ProductAdd from './Product/Add'
+export ProductEdit from './Product/Edit'
+export ProductList from './Product/List'
+export ProductListItem from './Product/List/Item'
+
+export ProductTemplate from './Product/Template'
+export ProductTemplateAdd from './Product/Template/Add'
+export ProductTemplateEdit from './Product/Template/Edit'
+export ProductTemplateList from './Product/Template/List'
+export ProductTemplateListItem from './Product/Template/List/Item'
 
 
 export Products from './Products/Products'
