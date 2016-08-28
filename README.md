@@ -12,6 +12,10 @@ npm start
 ```
 
 ## TODO
+- [ ] Write core/product
+- [ ] Add controllers
+  - [ ] product
+  - [ ] productTemplate
 - [ ] update transliteration
   - [X] add option replaceSpace: '' or '-'
   - [ ] add more chars & symbols in dictionary
