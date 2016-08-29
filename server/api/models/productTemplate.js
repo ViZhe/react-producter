@@ -29,30 +29,6 @@ const ProductTemplate = thinky.createModel('ProductTemplate', {
       )
     })
   ).required()
-
-  // {
-  //   name: String,
-  //   title: String,
-  //   fields: [
-  //     {
-  //       name: String
-  //       title: String
-  //       type: 'text',
-  //       initialValue: String
-  //       validate: [
-  //         {
-  //           type: 'required',
-  //           title: String
-  //         },
-  //         {
-  //           type: 'regex',
-  //           regex: '^[0-9]*?$',
-  //           title: String
-  //         }
-  //       ]
-  //     }
-  //   ]
-  // }
 })
 
 export default ProductTemplate
