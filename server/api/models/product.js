@@ -1,7 +1,10 @@
 
-import thinky, {type, r} from 'thinky'
+import thinky from '../thinky'
 
-const Product = thinky.createModel('Product', {
+
+const {type, r} = thinky
+
+const Product = thinky.createModel('products', {
   id: type.string(),
   meta: {
     isActivated: type.boolean(),
@@ -22,5 +25,6 @@ const Product = thinky.createModel('Product', {
   templateId: type.string(),
   options: type.object()
 })
+
 
 export default Product

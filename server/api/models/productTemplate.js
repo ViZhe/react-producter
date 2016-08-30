@@ -1,7 +1,10 @@
 
-import thinky, {type, r} from 'thinky'
+import thinky from '../thinky'
 
-const ProductTemplate = thinky.createModel('ProductTemplate', {
+
+const {type, r} = thinky
+
+const ProductTemplate = thinky.createModel('product_templates', {
   id: type.string().default(r.uuid(5)),
   name: type.string().regex(/^[a-z]*?$/),
   title: type.string(),
