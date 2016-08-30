@@ -27,7 +27,7 @@ const ProductTemplate = thinky.createModel('product_templates', {
             'regex'
           ]),
           title: type.string(),
-          regex: '^[0-9]*?$'
+          regex: type.string()
         })
       )
     })
