@@ -1,56 +1,24 @@
 
 import {Router} from 'express'
-import r from 'rethinkdbdash'
+// import r from 'rethinkdbdash'
 
-// import {
-//   fields,
-//   groups,
-//   templates
-// } from './options'
+import product from './controllers/product'
+import productTemplate from './controllers/productTemplate'
+
 
 const router = new Router()
 
-// router.get('/fields', fields.list)
-// router.get('/fields/:id', fields.list)
-router.get('/fields', (req, res) => {
-  r().db('Hoppas').table('options_fields').run()
-    .then(result => {
-      res.status(200).json(result)
-    })
-    .error(err => {
-      res.status(404).json(err)
-    })
-})
+router.get('/products', product.list)
+router.get('/product/:id', product.item)
+router.post('/product', product.add)
+router.put('/product/:id', product.update)
+router.delete('/product/:id', product.delete)
 
+router.get('/product_templates', productTemplate.list)
+router.get('/product_template/:id', productTemplate.item)
+router.post('/product_template', productTemplate.add)
+router.put('/product_template/:id', productTemplate.update)
+router.delete('/product_template/:id', productTemplate.delete)
 
-// exports.users = function(req , res){
-//   r.db('Hoppas').table('options_fields_aafc19a498fe').run().then(function(result) {
-//     res.status(200).json(result)
-//   }).error(function(err){
-//     res.status(404).json({message : 'An Error has Occured'});
-//   })
-//
-//   // var user = User.run().then(function(result){
-//   // 	res.status(200).json(result);
-//   // }).error(function(err){
-//   // 	res.status(404).json({message : 'An Error has Occured'});
-//  // 	});
-// };
-
-
-// router.get('/:slug', (req, res) => {
-//   const index = fakeDB.findIndex(el => el.slug === req.params.slug)
-//   if (index < 0) {
-//     res.status(404).json({
-//       error: 'Post does not exist in db'
-//     })
-//   }
-//
-//   setTimeout(() => {
-//     res.status(200).json(fakeDB[index])
-//   }, 300)
-// })
-//
-// module.exports = router
 
 export default router
