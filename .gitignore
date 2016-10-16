@@ -4,6 +4,3 @@ npm-debug.log
 /dist/
 assets.json
 /rethinkdb_data/
-/server/config.rethinkdb.js
-
-.secret
